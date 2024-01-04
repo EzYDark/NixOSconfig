@@ -18,11 +18,13 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, disko, ... }: {
     nixosConfigurations = {
       eznix = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+
         modules = [
+          disko.nixosModules.disko
           ./system/default.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;

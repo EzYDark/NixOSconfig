@@ -4,18 +4,29 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./configs/hyprland.nix
+    ./configs/librewolf.nix
+  
+    #./configs/gaming
+  ];
+
+  # User info
   home.username = "ezy";
   home.homeDirectory = "/home/ezy";
-
   home.stateVersion = "23.11";
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  # User-wide apps
-  programs = {
-    librewolf.enable = true;
+  
+  # Enable Fractional scaling of displays (Gnome)
+  dconf.settings = {
+    "org/gnome/mutter" = {
+      experimental-features = [ "scale-monitor-framebuffer" ];
+    };
   };
+
+
 
   # User-wide packages
   home.packages = with pkgs; [
@@ -26,11 +37,4 @@
     gnome-extension-manager
     # gnomeExtensions.huawei-wmi-controls
   ];
-
-  # Enable Fractional scaling of displays (Gnome)
-  dconf.settings = {
-    "org/gnome/mutter" = {
-      experimental-features = [ "scale-monitor-framebuffer" ];
-    };
-  };
 }

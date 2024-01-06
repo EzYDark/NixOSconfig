@@ -1,9 +1,11 @@
+# https://github.com/nix-community/disko/tree/master/example
+
 {
   disko.devices = {
     disk = {
       main = {
         type = "disk";
-        device = "/dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-512G-1027_20245T494806";
+        device = "/dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-512G-1027_20245T494806"; # TODO: Make it dynamic for all disks
         content = {
           type = "gpt";
           partitions = {

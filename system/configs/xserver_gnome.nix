@@ -1,9 +1,9 @@
-{ config, lib, pkgs, ... }:
+{ ... }:
 
 {
   services.xserver = {
     enable = true;
-    layout = "cz"; # Czech keyboard layout
+    xkb.layout = "cz, us"; # Czech and English keyboard layouts
     desktopManager.gnome.enable = true;
     displayManager.gdm = {
       enable = true;

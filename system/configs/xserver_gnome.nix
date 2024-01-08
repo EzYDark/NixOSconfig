@@ -10,14 +10,8 @@
     #   wayland = true; # Enable Wayland for GDM
     # };
     videoDrivers = [ "amdgpu" ];
-    displayManager = {
-      defaultSession = "none+awesome";
-      startx.enable = true;
-    };
-    windowManager.awesome = {
-      enable = true;
-    };
-    desktopManager.gnome.enable = false;
+    displayManager.sddm.enable = true;
+    displayManager.sddm.wayland.enable = true;
     libinput.enable = true; # Enable libinput for touchpad support
   };
 

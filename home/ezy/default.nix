@@ -19,12 +19,12 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   
-  # Enable Fractional scaling of displays (Gnome)
-  dconf.settings = {
-    "org/gnome/mutter" = {
-      experimental-features = [ "scale-monitor-framebuffer" ];
-    };
-  };
+  # # Enable Fractional scaling of displays (Gnome)
+  # dconf.settings = {
+  #   "org/gnome/mutter" = {
+  #     experimental-features = [ "scale-monitor-framebuffer" ];
+  #   };
+  # };
 
 
 
@@ -34,7 +34,7 @@
     nil
     steam
     fragments
-    gnome-extension-manager
+    # gnome-extension-manager
     # gnomeExtensions.huawei-wmi-controls
   ];
 }

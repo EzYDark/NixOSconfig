@@ -14,11 +14,11 @@
     ./configs/sound_pipewire.nix
     ./configs/zram.nix
     ./configs/power_management.nix
-    ./configs/kvm_vfio.nix
+    #./configs/kvm_vfio.nix
     ./configs/openssh.nix
     ./configs/garbage_collection.nix
     ./configs/networking.nix
     ./configs/xserver_gnome.nix
-    ./configs/gpu_nvidia.nix
+    #./configs/gpu_nvidia.nix
   ];
 }

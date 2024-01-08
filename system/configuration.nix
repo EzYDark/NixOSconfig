@@ -3,15 +3,12 @@
 # Uncategorized configuration
 #############################
 
-{ pkgs, hyprland, ... }:
+{ pkgs, ... }:
 
 {
   # System-wide apps
   programs = {
-    hyprland = {
-      enable = true;
-      package = hyprland.packages.${pkgs.system}.hyprland;
-    };
+    
   };
 
   # System-wide packages

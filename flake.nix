@@ -16,9 +16,16 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprland.url = "github:hyprwm/Hyprland";
+
+    hyprland-plugins = {
+        url = "github:hyprwm/hyprland-plugins";
+        inputs.hyprland.follows = "hyprland";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, disko, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, disko, hyprland, hyprland-plugins, ... }: {
     nixosConfigurations = {
       ezy-laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

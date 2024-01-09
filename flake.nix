@@ -18,7 +18,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, disko, hyprland, hyprland-plugins, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, disko, ... }: {
     nixosConfigurations = {
       ezy-laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

@@ -20,5 +20,7 @@
     ./configs/networking.nix
     ./configs/xserver_gnome.nix
     ./configs/gpu_nvidia.nix
+    ./configs/droidcam.nix
+    ./configs/opengl.nix
   ];
 }

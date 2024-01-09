@@ -1,4 +1,4 @@
-# https://nix-community.github.io/home-manager/options.html
+# https://nix-community.github.io/home-manager/options.xhtml
 # https://mipmip.github.io/home-manager-option-search/
 
 { pkgs, ... }:

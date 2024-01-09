@@ -22,5 +22,6 @@
     ./configs/gpu_nvidia.nix
     ./configs/droidcam.nix
     ./configs/opengl.nix
+    ./configs/containers.nix
   ];
 }

@@ -19,9 +19,9 @@
     ./configs/garbage_collection.nix
     ./configs/networking.nix
     ./configs/xserver_gnome.nix
-    ./configs/gpu_nvidia.nix
-    ./configs/droidcam.nix
-    ./configs/opengl.nix
-    ./configs/containers.nix
+    # ./configs/gpu_nvidia.nix
+    # ./configs/droidcam.nix
+    # ./configs/opengl.nix
+    # ./configs/containers.nix
   ];
 }

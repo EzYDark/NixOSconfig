@@ -8,7 +8,7 @@
       # group = "ezy";
       # shell = "/bin/bash";
       # uid = 1000;
-      extraGroups = ["networkmanager" "wheel"];
+      extraGroups = [ "networkmanager" "wheel" "huawei-wmi" ];
     };
   };
 

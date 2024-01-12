@@ -25,5 +25,7 @@
     # ./configs/containers.nix
     ./configs/xone.nix
     ./configs/huawei-wmi.nix
+    ./configs/parsec.nix
+    ./configs/telegram.nix
   ];
 }

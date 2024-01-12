@@ -1,5 +1,4 @@
-                                                                                                                  { config, ... }:
-
+{ pkgs, config, ... }:
 {
   virtualisation = {
     libvirtd = {
@@ -40,6 +39,14 @@
   programs = {
     virt-manager.enable = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    looking-glass-client
+  ];
+
+  systemd.tmpfiles.rules = [
+    "f /dev/shm/looking-glass 0660 alex qemu-libvirtd -"
+  ];
 
   # Enable OpenGL
   hardware.opengl = {

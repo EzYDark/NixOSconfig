@@ -27,5 +27,6 @@
     ./configs/huawei-wmi.nix
     ./configs/parsec.nix
     ./configs/telegram.nix
+    ./configs/figma.nix
   ];
 }

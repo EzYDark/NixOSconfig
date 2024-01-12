@@ -45,7 +45,7 @@
   ];
 
   systemd.tmpfiles.rules = [
-    "f /dev/shm/looking-glass 0660 alex qemu-libvirtd -"
+    "f /dev/shm/looking-glass 0660 ezy qemu-libvirtd -"
   ];
 
   # Enable OpenGL

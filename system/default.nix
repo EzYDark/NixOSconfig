@@ -28,5 +28,6 @@
     ./configs/parsec.nix
     ./configs/telegram.nix
     ./configs/figma.nix
+    ./configs/keyd.nix
   ];
 }

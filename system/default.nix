@@ -41,8 +41,6 @@
     pkgs.steam
     pkgs.fragments
     pkgs.parsec-bin
-    pkgs.warp-terminal
-    pkgs.alacritty
 
     pkgs.gnome-extension-manager
     

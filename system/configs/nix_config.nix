@@ -10,7 +10,6 @@
       options =  "--delete-older-than 7d";
     };
     optimise = {
-      enable = true;
       automatic = true;
     };
   };

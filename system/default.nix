@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
@@ -27,7 +27,7 @@
     ./configs/xone.nix
     ./configs/huawei-wmi.nix
     ./configs/firefox.nix
-    ./configs/zsh.nix
+    ./configs/zsh.nix    
   ];
 
 
@@ -37,11 +37,15 @@
   };
 
   # System-wide packages
-  environment.systemPackages = with pkgs; [
-    steam
-    fragments
-    parsec-bin
+  environment.systemPackages = [
+    pkgs.steam
+    pkgs.fragments
+    pkgs.parsec-bin
+    pkgs.warp-terminal
+    pkgs.alacritty
 
-    gnome-extension-manager
+    pkgs.gnome-extension-manager
+    
+    inputs.vesktop.legacyPackages.${pkgs.system}.vesktop
   ];
 }

@@ -17,10 +17,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Newer unreleased version of distrobox (1.6.0.1)
     distrobox.url = "github:pongo1231/nixpkgs/distrobox-1.6.0";
+
+    vesktop.url = "github:Airradda/nixpkgs/master";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, disko, distrobox, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, disko, distrobox, vesktop, ... }: {
     nixosConfigurations = {
       ezy-laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

@@ -78,7 +78,24 @@
         "disko": "disko",
         "distrobox": "distrobox",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "vesktop": "vesktop"
+      }
+    },
+    "vesktop": {
+      "locked": {
+        "lastModified": 1705371811,
+        "narHash": "sha256-VvwaeNt6IaMiPc2R+5cJC7oOBEU/xOKReF0CgC6pL6g=",
+        "owner": "Airradda",
+        "repo": "nixpkgs",
+        "rev": "2a2273f1e30c9ff1a40f932da79c2d60b860c359",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Airradda",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     }
   },

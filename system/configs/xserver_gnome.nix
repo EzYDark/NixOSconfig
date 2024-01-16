@@ -13,4 +13,5 @@
   };
 
   programs.xwayland.enable = true;
+
 }

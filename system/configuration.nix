@@ -1,19 +1,37 @@
-
-#############################
-# Uncategorized configuration
-#############################
-
-{ pkgs, ... }:
-
+{ ... }:
 {
-  # System-wide apps
-  programs = {
-    
-  };
+  #############################################
+  # System configuration (uncategorized)
+  #############################################
 
-  # System-wide packages
-  environment.systemPackages = with pkgs; [
-    
-  ];
+
+  # Set the system's timezone to Prague.
+  time.timeZone = "Europe/Prague";
+
+
+  # Set the system's locale to English.
+  i18n.defaultLocale = "en_US.UTF-8";
+
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+  environment = {
+    variables = {
+      NIXPKGS_ALLOW_UNFREE = "1";
+    };
+  };
   
+
+  # Enable to support opening default applications with xdg-open from containers and FHS apps
+  xdg = {
+    portal = {
+      enable = true;
+      xdgOpenUsePortal = true;
+    };
+    mime.enable = true;
+  };
+  environment.homeBinInPath = true;
+
+
+  system.stateVersion = "23.11";
 }

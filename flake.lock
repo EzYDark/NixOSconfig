@@ -20,6 +20,22 @@
         "type": "github"
       }
     },
+    "distrobox": {
+      "locked": {
+        "lastModified": 1705261219,
+        "narHash": "sha256-x7ZAuz80W6pnDSeleUQgQODewsDPPDVFErCRqkoqeMY=",
+        "owner": "pongo1231",
+        "repo": "nixpkgs",
+        "rev": "3755aefcb91129fcab9608f2864d2b77781ce685",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pongo1231",
+        "ref": "distrobox-1.6.0",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -60,6 +76,7 @@
     "root": {
       "inputs": {
         "disko": "disko",
+        "distrobox": "distrobox",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       }

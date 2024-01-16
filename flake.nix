@@ -16,9 +16,11 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    distrobox.url = "github:pongo1231/nixpkgs/distrobox-1.6.0";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, disko, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, disko, distrobox, ... }: {
     nixosConfigurations = {
       ezy-laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

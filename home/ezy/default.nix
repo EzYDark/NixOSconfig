@@ -29,11 +29,6 @@
 
   # User-wide packages
   home.packages = with pkgs; [
-    vscode-fhs
-    nil
-    steam
-    fragments
-    gnome-extension-manager
-    gnomeExtensions.huawei-wmi-controls
+    
   ];
 }

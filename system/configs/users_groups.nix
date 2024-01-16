@@ -1,24 +1,23 @@
 { ... }:
 {
-  users.users = { 
-    ezy = {
-      # createHome = true;
-      isNormalUser = true;
-      password = "1234";
-      # group = "ezy";
-      # shell = "/bin/bash";
-      # uid = 1000;
-      extraGroups = [ "networkmanager" "wheel" "huawei-wmi" ];
+  users = {
+    defaultUserShell = "pkgs.zsh";
+    mutableUsers = false;
+
+    users = { 
+      ezy = {
+        isNormalUser = true;
+        password = "1234";
+        group = "ezy";
+        shell = "pkgs.zsh";
+        extraGroups = [ "networkmanager" "wheel" "huawei-wmi" ];
+      };
+    };
+
+    groups = {
+      ezy = {
+        members = [ "ezy" ];
+      };
     };
   };
-
-  # users.groups = {
-  #   ezy = {
-  #     gid = 1000;
-  #   };
-  # };
-
-  
-
-  users.mutableUsers = false;
 }

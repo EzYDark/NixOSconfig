@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   environment.systemPackages = [
-    pkgs.distrobox
+    inputs.distrobox.legacyPackages.${pkgs.system}.distrobox
   ];
 
   virtualisation = {

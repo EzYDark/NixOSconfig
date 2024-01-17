@@ -43,6 +43,7 @@
     pkgs.fragments
     pkgs.parsec-bin
     pkgs.gedit
+    pkgs.blackbox-terminal
 
     pkgs.gnome-extension-manager
     

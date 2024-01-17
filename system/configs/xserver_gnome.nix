@@ -23,5 +23,6 @@
   environment.systemPackages = with pkgs; [
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.appindicator
+    gnomeExtensions.media-controls
   ];
 }

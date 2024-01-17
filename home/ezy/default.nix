@@ -6,6 +6,7 @@
 {
   imports = [
     ./configs/librewolf.nix
+    ./configs/ssh.nix
   
     #./configs/gaming
   ];

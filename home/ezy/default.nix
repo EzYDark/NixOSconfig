@@ -25,6 +25,8 @@
     };
   };
 
+  dconf.settings."org/gnome/desktop/wm/preferences".button-layout = ":minimize,close";
+
 
 
   # User-wide packages

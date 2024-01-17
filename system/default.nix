@@ -41,6 +41,7 @@
     pkgs.steam
     pkgs.fragments
     pkgs.parsec-bin
+    pkgs.gedit
 
     pkgs.gnome-extension-manager
     

@@ -5,22 +5,7 @@
   ];
 
   programs = {
-    git = {
-      enable = true;
-      config = {
-        user = {
-          email = "ezydark@protonmail.com";
-          name = "EzYDark";
-          signingKey = "~/.ssh/ezKey.pub";
-        };
-        commit = {
-          gpgSign = true;
-        };
-        gpg = {
-          format = "ssh";
-        };
-      };
-    };
+    git.enable = true;
   };
   
   environment.systemPackages = with pkgs; [

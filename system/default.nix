@@ -27,7 +27,8 @@
     ./configs/xone.nix
     ./configs/huawei-wmi.nix
     ./configs/firefox.nix
-    ./configs/zsh.nix    
+    ./configs/zsh.nix
+    ./configs/touchpad.nix
   ];
 
 

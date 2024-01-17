@@ -1,8 +1,16 @@
 { ... }:
 {
-  services.xserver.libinput.touchpad = {
+  services.xserver.libinput = {
     enable = true;
-    accelProfile = "flat";
-    accelSpeed = "0";
+    
+    # TODO: Not working - fix touchpad's scroll speed
+    # touchpad = {
+    #   accelProfile = "flat";
+    #   accelSpeed = "0";
+    #   additionalOptions = 
+    #   ''
+    #     Option "ScrollPixelDistance" "50"
+    #   '';
+    # };
   };
 }

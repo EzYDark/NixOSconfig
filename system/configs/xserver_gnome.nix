@@ -9,7 +9,6 @@
       enable = true;
       wayland = true; # Enable Wayland for GDM
     };
-    libinput.enable = true; # Enable libinput for touchpad support
   };
   programs.xwayland.enable = true;
 

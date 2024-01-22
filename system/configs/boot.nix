@@ -11,6 +11,6 @@
     # Remove the temporary files on boot.
     tmp.cleanOnBoot = true;
     
-    kernelPackages = pkgs.linuxPackages_6_6;
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 }

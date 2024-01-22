@@ -45,6 +45,8 @@
     pkgs.gedit
     pkgs.blackbox-terminal
 
+    pkgs.osu-lazer-bin
+
     pkgs.gnome-extension-manager
     
     inputs.vesktop.legacyPackages.${pkgs.system}.vesktop

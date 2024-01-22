@@ -30,7 +30,7 @@
     };
     mime.enable = true;
   };
-  environment.homeBinInPath = true;
+  environment.homeBinInPath = true; # Add ~/bin to $PATH
 
 
   system.stateVersion = "23.11";

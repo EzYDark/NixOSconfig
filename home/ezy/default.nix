@@ -34,7 +34,7 @@
       # Switch to new window instead of just "...is ready to use" notification
       "org/gnome/desktop/wm/preferences".focus-new-windows = "smart";
 
-      "org/gnome/desktop/wm/keybindings".switch-windows = "['<Alt>Tab']";
+      "org/gnome/desktop/wm/keybindings".switch-windows = [ "<Alt>Tab" ];
     };
   };
 

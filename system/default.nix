@@ -49,6 +49,6 @@
 
     pkgs.gnome-extension-manager
     
-    inputs.vesktop.legacyPackages.${pkgs.system}.vesktop
+    inputs.vesktop.legacyPackages."x86_64-linux".vesktop
   ];
 }

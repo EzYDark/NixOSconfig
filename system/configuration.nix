@@ -33,5 +33,8 @@
   environment.homeBinInPath = true; # Add ~/bin to $PATH
 
 
+  hardware.video.hidpi.enable = true;
+
+
   system.stateVersion = "23.11";
 }

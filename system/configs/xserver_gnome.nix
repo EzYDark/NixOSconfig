@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./gnome_monitor_config.nix
+  ];
+
   services.xserver = {
     enable = true;
     xkb.layout = "cz"; # Czech and English keyboard layouts
@@ -43,5 +47,18 @@
       });
     })
   ];
+
+  # https://discourse.nixos.org/t/gdm-monitor-configuration/6356
+  systemd.tmpfiles.rules = [
+    "L+ /run/gdm/.config/monitors.xml - - - - ${pkgs.writeText "gdm-monitors.xml" ''
+      <!-- this should all be copied from your ~/.config/monitors.xml -->
+      <monitors version="2">
+        <configuration>
+            <!-- REDACTED -->
+        </configuration>
+      </monitors>
+    ''}"
+  ];
+
   nixpkgs.config.allowAliases = false;
 }

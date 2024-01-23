@@ -48,17 +48,5 @@
     })
   ];
 
-  # https://discourse.nixos.org/t/gdm-monitor-configuration/6356
-  systemd.tmpfiles.rules = [
-    "L+ /run/gdm/.config/monitors.xml - - - - ${pkgs.writeText "gdm-monitors.xml" ''
-      <!-- this should all be copied from your ~/.config/monitors.xml -->
-      <monitors version="2">
-        <configuration>
-            <!-- REDACTED -->
-        </configuration>
-      </monitors>
-    ''}"
-  ];
-
   nixpkgs.config.allowAliases = false;
 }

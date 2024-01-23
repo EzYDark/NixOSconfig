@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  monitorsXmlContent = builtins.readFile /home/ezy/.config/monitors.xml;
+  monitorsXmlContent = builtins.readFile ../../_configs/monitors.xml;
   monitorsConfig = pkgs.writeText "gdm_monitors.xml" monitorsXmlContent;
 in {
   systemd.tmpfiles.rules = [

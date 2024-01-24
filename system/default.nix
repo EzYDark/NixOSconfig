@@ -25,10 +25,9 @@
     ./configs/droidcam.nix
     ./configs/containers.nix
     ./configs/xone.nix
-    ./configs/huawei-wmi.nix
     ./configs/firefox.nix
     ./configs/zsh.nix
-    ./configs/touchpad.nix
+    ./configs/libinput.nix
   ];
 
 

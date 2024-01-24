@@ -29,6 +29,9 @@
     gnomeExtensions.media-controls
 
     gnomeExtensions.appindicator
+
+    # "Many applications rely heavily on having an icon theme available"
+    gnome.adwaita-icon-theme
   ];
 
 
@@ -47,6 +50,7 @@
       });
     })
   ];
-
   nixpkgs.config.allowAliases = false;
+
+  programs.dconf.enable = true;
 }

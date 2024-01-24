@@ -13,8 +13,11 @@
   };
 
   # Automatic battery threshold set (for Huawei Matebook)
+  boot.initrd.kernelModules = [ "huawei_wmi" ];
+
   environment.systemPackages = [
     pkgs.inotify-tools
+    pkgs.gnomeExtensions.huawei-wmi-controls
   ];
   systemd.services."bat-threshold" = {
     enable = true;

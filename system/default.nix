@@ -26,15 +26,19 @@
     ./configs/containers.nix
     ./configs/xone.nix
     ./configs/firefox.nix
-    ./configs/zsh.nix
+    # ./configs/zsh.nix
+    ./configs/fish_shell.nix
     ./configs/libinput.nix
+    ./configs/appimage.nix
   ];
 
 
   # System-wide apps
   programs = {
-    
+    nix-ld.enable = true;
   };
+
+  services.envfs.enable = true;
 
   # System-wide packages
   environment.systemPackages = [

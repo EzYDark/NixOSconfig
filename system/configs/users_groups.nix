@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   users = {
-    defaultUserShell = pkgs.zsh;
+    defaultUserShell = pkgs.fish;
     mutableUsers = false;
 
     users = { 
@@ -9,7 +9,7 @@
         isNormalUser = true;
         password = "1234";
         group = "ezy";
-        shell = pkgs.zsh;
+        shell = pkgs.fish;
         extraGroups = [ "networkmanager" "wheel" "huawei-wmi" ];
       };
     };

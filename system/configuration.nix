@@ -18,6 +18,7 @@
   environment = {
     variables = {
       NIXPKGS_ALLOW_UNFREE = "1";
+      QT_QPA_PLATFORM = "wayland";
     };
   };
   

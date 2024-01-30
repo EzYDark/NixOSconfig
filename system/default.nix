@@ -26,10 +26,7 @@
     ./configs/containers.nix
     ./configs/xone.nix
     ./configs/firefox.nix
-    # ./configs/zsh.nix
     ./configs/fish_shell.nix
-    ./configs/libinput.nix
-    ./configs/appimage.nix
   ];
 
 

@@ -3,7 +3,6 @@
 {
   imports = [
     ./configs/boot.nix
-    ./configs/experimental_flake.nix
     ./hardware-configuration.nix
     ./configs/disk_partitions.nix
     ./configuration.nix
@@ -18,10 +17,11 @@
     ./configs/openssh.nix
     ./configs/nix_config.nix
     ./configs/networking.nix
-    ./configs/xserver_gnome.nix
+    # ./configs/xserver_gnome.nix  #!! Choose this or
+    ./configs/xserver_hyprland.nix #!! this one only!
     ./configs/opengl.nix
-    ./configs/kvm_vfio.nix         #!!! 1) Select this or
-    # ./configs/gpu_nvidia.nix     #!!! 2) This one only!
+    ./configs/kvm_vfio.nix         #!! Choose this or
+    # ./configs/gpu_nvidia.nix     #!! this one only!
     ./configs/droidcam.nix
     ./configs/containers.nix
     ./configs/xone.nix
@@ -34,8 +34,6 @@
   programs = {
     nix-ld.enable = true;
   };
-
-  services.envfs.enable = true;
 
   # System-wide packages
   environment.systemPackages = [

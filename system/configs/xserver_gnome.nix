@@ -1,10 +1,6 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ./gnome_monitor_config.nix
-  ];
-
   services.xserver = {
     enable = true;
     xkb.layout = "cz"; # Czech and English keyboard layouts

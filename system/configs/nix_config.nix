@@ -1,8 +1,14 @@
 { ... }:
 {
+  programs = {
+    # Flakes use Git to pull dependencies from data sources 
+    git.enable = true;
+  };
+
   nix = {
     settings = {
       auto-optimise-store = true;
+      experimental-features = [ "nix-command" "flakes" ];
     };
     gc = {
       automatic = true;

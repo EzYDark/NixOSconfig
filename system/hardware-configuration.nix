@@ -13,6 +13,46 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
+  # fileSystems."/" =
+  #   { device = "/dev/disk/by-uuid/647449ab-e8d3-4e58-86e4-d2a6d0ba7ddc";
+  #     fsType = "btrfs";
+  #     options = [ "subvol=@root" "compress=zstd" ];
+  #   };
+
+  # fileSystems."/nix" =
+  #   { device = "/dev/disk/by-uuid/647449ab-e8d3-4e58-86e4-d2a6d0ba7ddc";
+  #     fsType = "btrfs";
+  #     options = [ "subvol=@nix" "compress=zstd" ];
+  #   };
+
+  # fileSystems."/persist" =
+  #   { device = "/dev/disk/by-uuid/647449ab-e8d3-4e58-86e4-d2a6d0ba7ddc";
+  #     fsType = "btrfs";
+  #     options = [ "subvol=@persist" "compress=zstd" ];
+  #     neededForBoot = true;
+  #   };
+
+  # fileSystems."/persist/_snapshots" =
+  #   { device = "/dev/disk/by-uuid/647449ab-e8d3-4e58-86e4-d2a6d0ba7ddc";
+  #     fsType = "btrfs";
+  #     options = [ "subvol=@persist_snapshots" "compress=zstd" ];
+  #     neededForBoot = true;
+  #   };
+
+  # fileSystems."/persist/home" =
+  #   { device = "/dev/disk/by-uuid/647449ab-e8d3-4e58-86e4-d2a6d0ba7ddc";
+  #     fsType = "btrfs";
+  #     options = [ "subvol=@persist_home" "compress=zstd" ];
+  #     neededForBoot = true;
+  #   };
+
+  # fileSystems."/boot" =
+  #   { device = "/dev/disk/by-uuid/9571-46D8";
+  #     fsType = "vfat";
+  #   };
+
+  # swapDevices = [ ];
+
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction

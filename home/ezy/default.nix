@@ -41,7 +41,7 @@
   };
  
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = "nano";
   };
 
   programs = {
@@ -97,7 +97,6 @@
     brightnessctl
     zathura
     htop
-    firefox
     libreoffice-still
     eww-wayland
     lxmenu-data

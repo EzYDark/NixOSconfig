@@ -18,7 +18,6 @@
                 format = "vfat";
                 mountpoint = "/boot";
                 mountOptions = [
-                  "defaults"
                   "umask=0077"
                 ];
               };
@@ -31,28 +30,30 @@
 	              subvolumes = {
 	                "@root" = {
 	                  mountOptions = [
-	                    "defaults"
 	                    "compress=zstd"
 	                  ];
 	                  mountpoint = "/";
 	                };
 	                "@nix" = {
 	                  mountOptions = [
-	                    "defaults"
 	                    "compress=zstd"
 	                  ];
 	                  mountpoint = "/nix";
 	                };
 	                "@" = {
 	                  mountOptions = [
-	                    "defaults"
 	                    "compress=zstd"
 	                  ];
 	                  mountpoint = "/persist";
 	                };
+	                # "@persist_snapshots" = {
+	                #   mountOptions = [
+	                #     "compress=zstd"
+	                #   ];
+	                #   mountpoint = "/persist/_snapshots";
+									# };
 	                "@home" = {
 	                  mountOptions = [
-	                    "defaults"
 	                    "compress=zstd"
 	                  ];
 	                  mountpoint = "/persist/home";
@@ -65,5 +66,12 @@
 			};
 		};
 	};
+	
+	# fileSystems."/".neededForBoot = true;
+	# fileSystems."/nix".neededForBoot = true;
+	# fileSystems."/var/log".neededForBoot = true;
+	fileSystems."/persist".neededForBoot = true;
+	# fileSystems."/persist/_snapshots".neededForBoot = true;
+	# fileSystems."/persist/home".neededForBoot = true;
 }
 

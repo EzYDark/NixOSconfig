@@ -12,6 +12,11 @@
         shell = pkgs.fish;
         extraGroups = [ "networkmanager" "wheel" "huawei-wmi" ];
       };
+
+      root = {
+        password = "1234";
+        shell = pkgs.fish;
+      };
     };
 
     groups = {

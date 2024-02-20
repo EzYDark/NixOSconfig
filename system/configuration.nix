@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   #############################################
   # System configuration ( or uncategorized)
@@ -19,6 +19,7 @@
 
 
   # Allow unfree packages
+  hardware.enableAllFirmware = true;
   nixpkgs.config.allowUnfree = true;
   environment = {
     variables = {
@@ -66,7 +67,7 @@
     packages = with pkgs; [ (nerdfonts.override { fonts = [ "Meslo" "JetBrainsMono" ]; }) ];
   };
 
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk ];
 
   environment.systemPackages = with pkgs; [
     gcc
@@ -74,7 +75,13 @@
     pamixer
     libsForQt5.qt5.qtquickcontrols2
     libsForQt5.qt5.qtgraphicaleffects
+    xdg-utils
   ];
+
+  services.gnome.gnome-keyring.enable = true;
+
+
+
 
   system.stateVersion = "23.11";
 }

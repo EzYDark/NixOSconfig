@@ -19,25 +19,30 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    impermanence.url = "github:nix-community/impermanence";
+
+
     # Newer unreleased version of distrobox (1.6.0.1)
     distrobox.url = "github:pongo1231/nixpkgs/distrobox-1.6.0";
 
     vesktop.url = "github:Airradda/nixpkgs/master";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, disko, distrobox, vesktop, ... }: 
+  outputs = inputs@{ self, nixpkgs, home-manager, disko, distrobox, vesktop, impermanence, ... }: 
   let
     system = "x86_64-linux";
   in
   {
     nixosConfigurations = {
       ezy-laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit system; };
+        specialArgs = { inherit system inputs; };
 
         modules = [
           ./system
 
           disko.nixosModules.disko
+
+          impermanence.nixosModules.impermanence
 
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;

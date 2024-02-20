@@ -2,9 +2,13 @@
 
 {
   imports = [
+    ./configs/disk_partitions.nix
     ./configs/boot.nix
     ./hardware-configuration.nix
-    ./configs/disk_partitions.nix
+
+    ./configs/impermanence.nix
+    # ./configs/opt-in_state.nix
+
     ./configuration.nix
 
     ./configs/users_groups.nix
@@ -20,7 +24,7 @@
     # ./configs/xserver_gnome.nix  #!! Choose this or
     ./configs/xserver_hyprland.nix #!! this one only!
     ./configs/opengl.nix
-    ./configs/kvm_vfio.nix         #!! Choose this or
+    # ./configs/kvm_vfio.nix         #!! Choose this or
     # ./configs/gpu_nvidia.nix     #!! this one only!
     ./configs/droidcam.nix
     ./configs/containers.nix

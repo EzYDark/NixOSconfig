@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, pkgs-unstable, ... }:
 
 {
   imports = [
@@ -21,36 +21,39 @@
     ./configs/openssh.nix
     ./configs/nix_config.nix
     ./configs/networking.nix
-    # ./configs/xserver_gnome.nix  #!! Choose this or
-    ./configs/xserver_hyprland.nix #!! this one only!
+    ./configs/xserver_hyprland.nix
     ./configs/opengl.nix
-    # ./configs/kvm_vfio.nix         #!! Choose this or
+    ./configs/kvm_vfio.nix # !! Choose this or
     # ./configs/gpu_nvidia.nix     #!! this one only!
     ./configs/droidcam.nix
     ./configs/containers.nix
     ./configs/xone.nix
     ./configs/firefox.nix
+    ./configs/chromium.nix
     ./configs/fish_shell.nix
   ];
 
-
   # System-wide apps
-  programs = {
-    nix-ld.enable = true;
-  };
+  programs = { nix-ld.enable = true; };
 
   # System-wide packages
   environment.systemPackages = [
     pkgs.steam
     pkgs.fragments
     pkgs.parsec-bin
-    pkgs.gedit
-    pkgs.blackbox-terminal
+    pkgs-unstable.stremio
+    pkgs.spotifyd
+    pkgs.virtiofsd
+    pkgs.appimage-run
+    pkgs.wget
+    pkgs.caprine-bin
+    pkgs-unstable.spotify-player
+    pkgs-unstable.spotify
+    pkgs-unstable.kitty
+    pkgs.nixfmt
 
     pkgs.osu-lazer-bin
 
-    pkgs.gnome-extension-manager
-    
     inputs.vesktop.legacyPackages."x86_64-linux".vesktop
   ];
 }

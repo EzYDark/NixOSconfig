@@ -21,41 +21,45 @@
 
     impermanence.url = "github:nix-community/impermanence";
 
-
     # Newer unreleased version of distrobox (1.6.0.1)
     distrobox.url = "github:pongo1231/nixpkgs/distrobox-1.6.0";
 
     vesktop.url = "github:Airradda/nixpkgs/master";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, disko, distrobox, vesktop, impermanence, ... }: 
-  let
-    system = "x86_64-linux";
-  in
-  {
-    nixosConfigurations = {
-      ezy-laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit system inputs; };
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, disko
+    , distrobox, vesktop, impermanence, ... }:
+    let system = "x86_64-linux";
+    in {
+      nixosConfigurations = {
+        ezy-laptop = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit system inputs;
 
-        modules = [
-          ./system
-
-          disko.nixosModules.disko
-
-          impermanence.nixosModules.impermanence
-
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-
-            home-manager.extraSpecialArgs = inputs;
-            home-manager.users = {
-              ezy = import ./home/ezy;
+            pkgs-unstable = import nixpkgs-unstable {
+              system = system;
+              config.allowUnfree = true;
             };
-          }
-        ];
+          };
+
+          modules = [
+            ./system
+
+            disko.nixosModules.disko
+
+            impermanence.nixosModules.impermanence
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+
+              home-manager.extraSpecialArgs = inputs;
+              home-manager.users = { ezy = import ./home/ezy; };
+            }
+          ];
+        };
       };
     };
-  };
 }
 

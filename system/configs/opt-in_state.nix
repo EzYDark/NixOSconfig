@@ -1,9 +1,9 @@
 # sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko /etc/nixos/system/configs/disk_partitions.nix
 
-# btrfs subvolume snapshot -r /mnt /mnt/persist/_snapshots/.root-blank
+# sudo btrfs subvolume snapshot -r /mnt /mnt/persist/_snapshots/.root-blank
 
-# nixos-generate-config --no-filesystems --root /mnt
-# nixos-install --no-root-password
+# sudo nixos-generate-config --no-filesystems --root /mnt
+# sudo nixos-install --no-root-password --flake /mnt/etc/nixos/flake.nix#ezy-laptop
 # reboot
 
 

@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
   programs = {
     firefox = {
       enable = true;
-      package = pkgs.firefox-devedition;
+      package = pkgs-unstable.firefox;
       # policies = {};
       # preferences = {};
     };

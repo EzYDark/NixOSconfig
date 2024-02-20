@@ -1,13 +1,8 @@
-{ pkgs, ...}:
-{
-  imports = [
-    ./vscode.nix
-  ];
+{ pkgs, ... }: {
+  imports = [ ./vscode.nix ];
 
-  programs = {
-    git.enable = true;
-  };
-  
+  programs = { git.enable = true; };
+
   environment.systemPackages = with pkgs; [
     nil
     bun

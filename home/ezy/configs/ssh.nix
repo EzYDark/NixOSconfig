@@ -1,6 +1,5 @@
-{ pkgs, ... }:
-{
-  # TODO: Make the SSH key (~/.ssh/ezKey) into this Nix configuration so it is still reproducible
+{ pkgs, ... }: {
+  # TODO: Make the SSH key (~/.ssh/ezKey) into this Nix configuration so it is still reproducible (using Impermanence?)
   programs = {
     ssh = {
       enable = true;
@@ -21,15 +20,9 @@
       userName = "EzYDark";
       userEmail = "ezydark@protonmail.com";
       extraConfig = {
-        user = {
-          signingKey = "~/.ssh/ezKey.pub";
-        };
-        commit = {
-          gpgSign = true;
-        };
-        gpg = {
-          format = "ssh";
-        };
+        user = { signingKey = "~/.ssh/ezKey.pub"; };
+        commit = { gpgSign = true; };
+        gpg = { format = "ssh"; };
       };
     };
 
@@ -38,7 +31,8 @@
 
   home.file.".ssh/config" = {
     target = ".ssh/config_source";
-    onChange = ''cat ~/.ssh/config_source > ~/.ssh/config && chmod 400 ~/.ssh/config'';
+    onChange =
+      "cat ~/.ssh/config_source > ~/.ssh/config && chmod 400 ~/.ssh/config";
   };
 
   services.ssh-agent.enable = true;

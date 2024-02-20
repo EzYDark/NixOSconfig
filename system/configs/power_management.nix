@@ -17,7 +17,6 @@
 
   environment.systemPackages = [
     pkgs.inotify-tools
-    pkgs.gnomeExtensions.huawei-wmi-controls
   ];
   systemd.services."bat-threshold" = {
     enable = true;

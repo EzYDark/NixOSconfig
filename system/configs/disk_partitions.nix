@@ -40,25 +40,25 @@
 	                  ];
 	                  mountpoint = "/nix";
 	                };
-	                "@" = {
+	                "@persist" = {
 	                  mountOptions = [
 	                    "compress=zstd"
 	                  ];
 	                  mountpoint = "/persist";
 	                };
-	                # "@persist_snapshots" = {
-	                #   mountOptions = [
-	                #     "compress=zstd"
-	                #   ];
-	                #   mountpoint = "/persist/_snapshots";
-									# };
-	                "@home" = {
+	                "@persist_snapshots" = {
+	                  mountOptions = [
+	                    "compress=zstd"
+	                  ];
+	                  mountpoint = "/persist/_snapshots";
+									};
+	                "@persist_home" = {
 	                  mountOptions = [
 	                    "compress=zstd"
 	                  ];
 	                  mountpoint = "/persist/home";
 									};
-								};
+		    			  };
 							};
 						};
 					};
@@ -67,11 +67,8 @@
 		};
 	};
 	
-	# fileSystems."/".neededForBoot = true;
-	# fileSystems."/nix".neededForBoot = true;
-	# fileSystems."/var/log".neededForBoot = true;
 	fileSystems."/persist".neededForBoot = true;
 	# fileSystems."/persist/_snapshots".neededForBoot = true;
-	# fileSystems."/persist/home".neededForBoot = true;
+	fileSystems."/persist/home".neededForBoot = true;
 }
 

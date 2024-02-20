@@ -10,7 +10,7 @@
         password = "1234";
         group = "ezy";
         shell = pkgs.fish;
-        extraGroups = [ "networkmanager" "wheel" "huawei-wmi" ];
+        extraGroups = [ "networkmanager" "wheel" "huawei-wmi" "libvirtd" ];
       };
 
       root = {

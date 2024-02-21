@@ -5,9 +5,9 @@
 { ... }: {
   environment.persistence."/persist" = {
     hideMounts = true;
+
     directories = [
       "/etc/nixos"
-      "/home/ezy/.ssh"
 
       "/var/log"
       "/var/lib/bluetooth"
@@ -21,6 +21,30 @@
         mode = "u=rwx,g=rx,o=";
       }
     ];
+
+    users.ezy = {
+      directories = [
+        "Downloads"
+        "Music"
+        "Pictures"
+        "Documents"
+        "Videos"
+        {
+          directory = ".gnupg";
+          mode = "0700";
+        }
+        {
+          directory = ".ssh";
+          mode = "0700";
+        }
+        {
+          directory = ".local/share/keyrings";
+          mode = "0700";
+        }
+      ];
+      # files = [ "" ];
+    };
+
     files = [
       # "/etc/machine-id"
       {

@@ -20,14 +20,12 @@
   environment = {
     variables = {
       NIXPKGS_ALLOW_UNFREE = "1";
-      SSH_ASKPASS = lib.mkForce "/home/ezy/askpass-rofi";
+      SSH_ASKPASS = lib.mkForce
+        "/home/ezy/askpass-rofi"; # TODO: Make reproducible with Impermanence
       # If cursor becomes invisible on Hyprland
       # WLR_NO_HARDWARE_CURSORS = "1";
     };
   };
-  # environment.extraInit = ''
-  #   unset -v SSH_ASKPASS
-  # '';
 
   # Enable to support opening default applications with xdg-open from containers and FHS apps
   xdg = {
@@ -38,6 +36,17 @@
     mime.enable = true;
   };
   environment.homeBinInPath = true; # Add ~/bin to $PATH
+
+  # # DNS service to publish my hostname as domain on LAN (ping ezy-laptop) ??
+  # # TODO: Set custom domain/hostname??
+  # services.avahi = {
+  #   enable = true;
+  #   publish = { # Is this all needed ??
+  #     enable = true;
+  #     userServices = true;
+  #     addresses = true;
+  #   };
+  # };
 
   # HYPRLAND uncategorized configs
   programs.dconf.enable = true;

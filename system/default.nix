@@ -51,6 +51,7 @@
     pkgs-unstable.spotify
     pkgs-unstable.kitty
     pkgs.nixfmt
+    pkgs.microsoft-edge
 
     pkgs.osu-lazer-bin
 

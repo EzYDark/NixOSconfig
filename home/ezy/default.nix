@@ -1,6 +1,6 @@
 # https://nix-community.github.io/home-manager/options.xhtml (latest/unstable)
-# https://home-manager.dev/manual/23.11/options.xhtml (23.11 version of home-manager)
 # https://mipmip.github.io/home-manager-option-search/ (latest/unstable)
+# https://home-manager.dev/manual/23.11/options.xhtml (23.11 version of home-manager)
 
 { pkgs, ... }:
 

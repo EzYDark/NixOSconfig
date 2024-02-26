@@ -24,6 +24,8 @@
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
       SSH_ASKPASS = lib.mkForce
         "/home/ezy/askpass-rofi"; # TODO: Make reproducible with Impermanence
+      GIT_ASKPASS = lib.mkForce
+        "/home/ezy/askpass-rofi"; # TODO: Make reproducible with Impermanence
     };
   };
 

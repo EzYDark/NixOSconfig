@@ -1,5 +1,4 @@
-{ pkgs, config, ... }:
-{
+{ pkgs, config, ... }: {
   virtualisation = {
     libvirtd = {
       enable = true;
@@ -33,16 +32,14 @@
   };
 
   # Enable SPICE protocol
-  virtualisation.spiceUSBRedirection.enable = true;
+  virtualisation.spiceUSBRedirection.enable =
+    true;
 
   # System-wide apps
-  programs = {
-    virt-manager.enable = true;
-  };
+  programs = { virt-manager.enable = true; };
 
-  environment.systemPackages = with pkgs; [
-    looking-glass-client
-  ];
+  environment.systemPackages = with pkgs;
+    [ looking-glass-client ];
 
   systemd.tmpfiles.rules = [
     "f /dev/shm/looking-glass 0660 ezy qemu-libvirtd -"
@@ -56,7 +53,7 @@
   };
 
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
     # Modesetting is required.
@@ -78,10 +75,11 @@
     open = false;
 
     # Enable the Nvidia settings menu,
-	  # accessible via `nvidia-settings`.
+    # accessible via `nvidia-settings`.
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package =
+      config.boot.kernelPackages.nvidiaPackages.stable;
   };
 }

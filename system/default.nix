@@ -11,7 +11,7 @@
 
     ./configuration.nix
 
-    ./configs/users_groups.nix
+    ./configs/users_groups
 
     ./configs/dev_work
 
@@ -21,20 +21,18 @@
     ./configs/openssh.nix
     ./configs/nix_config.nix
     ./configs/networking.nix
-    ./configs/xserver_hyprland.nix
+    ./configs/hyprland
     ./configs/opengl.nix
     ./configs/kvm_vfio.nix # !! Choose this or
-    # ./configs/gpu_nvidia.nix     #!! this one only!
+    # ./configs/gpu_nvidia.nix # !! this one only!
     ./configs/droidcam.nix
     ./configs/containers.nix
     ./configs/xone.nix
-    ./configs/firefox.nix
-    ./configs/chromium.nix
     ./configs/fish_shell.nix
   ];
 
   # System-wide apps
-  programs = { nix-ld.enable = true; };
+  programs = { };
 
   # System-wide packages
   environment.systemPackages = [
@@ -42,14 +40,10 @@
     pkgs.fragments
     pkgs.parsec-bin
     pkgs-unstable.stremio
-    pkgs.spotifyd
-    pkgs.virtiofsd
-    pkgs.appimage-run
+    pkgs.pkgs.appimage-run
     pkgs.wget
     pkgs.caprine-bin
-    pkgs-unstable.spotify-player
     pkgs-unstable.spotify
-    pkgs-unstable.kitty
     pkgs.nixfmt
     pkgs.microsoft-edge
 

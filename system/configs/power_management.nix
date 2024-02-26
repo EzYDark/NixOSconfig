@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   services.auto-cpufreq.enable = true;
   services.auto-cpufreq.settings = {
     battery = {
@@ -15,17 +14,16 @@
   # Automatic battery threshold set (for Huawei Matebook)
   boot.initrd.kernelModules = [ "huawei_wmi" ];
 
-  environment.systemPackages = [
-    pkgs.inotify-tools
-  ];
+  environment.systemPackages =
+    [ pkgs.inotify-tools ];
   systemd.services."bat-threshold" = {
     enable = true;
     wantedBy = [ "multi-user.target" ];
     after = [ "auto-cpufreq.service" ];
     serviceConfig = {
-      User="root";
-      Group="root";
-      Restart="on-failure";
+      User = "root";
+      Group = "root";
+      Restart = "on-failure";
     };
     script = ''
       # Define the desired threshold

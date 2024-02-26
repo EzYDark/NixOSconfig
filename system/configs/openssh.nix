@@ -1,7 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   # Disable the SSH server.
-  services.openssh = {
-    enable = false;
-  };
+  services.openssh = { enable = false; };
 }

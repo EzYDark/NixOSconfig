@@ -1,14 +1,14 @@
 { config, lib, pkgs, ... }:
 
 {
-  
+
   gtk = {
     enable = true;
-    
+
     theme = {
       name = "Materia-dark-compact";
       package = pkgs.materia-theme;
-    }; 
+    };
 
     iconTheme = {
       name = "Paper";

@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   # Enable OpenGL
   hardware.opengl = {
     enable = true;

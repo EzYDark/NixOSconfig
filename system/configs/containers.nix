@@ -1,7 +1,7 @@
-{ inputs, pkgs, ... }:
-{
+{ inputs, pkgs, ... }: {
   environment.systemPackages = [
     inputs.distrobox.legacyPackages."x86_64-linux".distrobox
+    pkgs.virtiofsd
   ];
 
   virtualisation = {

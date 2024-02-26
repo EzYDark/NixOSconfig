@@ -20,7 +20,9 @@
       userName = "EzYDark";
       userEmail = "ezydark@protonmail.com";
       extraConfig = {
-        user = { signingKey = "~/.ssh/ezKey.pub"; };
+        user = {
+          signingKey = "~/.ssh/ezKey.pub";
+        };
         commit = { gpgSign = true; };
         gpg = { format = "ssh"; };
       };

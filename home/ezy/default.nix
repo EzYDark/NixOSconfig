@@ -10,7 +10,7 @@
     ./configs/alactritty.nix
     ./configs/bat.nix
     ./configs/themes.nix
-    
+
     #./configs/gaming
   ];
 
@@ -28,7 +28,6 @@
     size = 22;
   };
 
-
   services.mako = {
     enable = true;
     backgroundColor = "#1d2021";
@@ -38,15 +37,10 @@
     textColor = "#a89984";
     layer = "overlay";
   };
- 
-  home.sessionVariables = {
-    EDITOR = "nano";
-  };
 
-  programs = {
-    lf.enable = true;
-  };
+  home.sessionVariables = { EDITOR = "nano"; };
 
+  programs = { lf.enable = true; };
 
   # User-wide packages
   home.packages = with pkgs; [
@@ -65,10 +59,10 @@
     iwgtk
     wirelesstools
     (waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-     })
-    )
-    mako 
+      mesonFlags = oldAttrs.mesonFlags
+        ++ [ "-Dexperimental=true" ];
+    }))
+    mako
     libnotify
     hyprpaper
     rofi-wayland

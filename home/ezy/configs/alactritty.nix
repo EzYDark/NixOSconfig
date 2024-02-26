@@ -1,13 +1,15 @@
 { config, pkgs, lib, ... }:
 
 {
-  home.packages = lib.optionals config.programs.alacritty.enable [pkgs.nerdfonts];
+  home.packages =
+    lib.optionals config.programs.alacritty.enable
+    [ pkgs.nerdfonts ];
 
   programs.alacritty = {
     enable = true;
 
     settings = {
-      
+
       # Font settings
       font = {
         normal = {
@@ -28,7 +30,7 @@
         };
         size = 11.5;
       };
-      
+
       # Padding
       window = {
         padding = {

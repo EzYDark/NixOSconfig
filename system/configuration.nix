@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ lib, pkgs, ... }: {
   #############################################
   # System configuration ( or uncategorized)
   #############################################
@@ -20,70 +20,15 @@
   environment = {
     variables = {
       NIXPKGS_ALLOW_UNFREE = "1";
+      POLKIT_AUTH_AGENT =
+        "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
       SSH_ASKPASS = lib.mkForce
         "/home/ezy/askpass-rofi"; # TODO: Make reproducible with Impermanence
-      # If cursor becomes invisible on Hyprland
-      # WLR_NO_HARDWARE_CURSORS = "1";
     };
   };
 
-  # Enable to support opening default applications with xdg-open from containers and FHS apps
-  xdg = {
-    portal = {
-      enable = true;
-      xdgOpenUsePortal = true;
-    };
-    mime.enable = true;
-  };
-  environment.homeBinInPath = true; # Add ~/bin to $PATH
-
-  # # DNS service to publish my hostname as domain on LAN (ping ezy-laptop) ??
-  # # TODO: Set custom domain/hostname??
-  # services.avahi = {
-  #   enable = true;
-  #   publish = { # Is this all needed ??
-  #     enable = true;
-  #     userServices = true;
-  #     addresses = true;
-  #   };
-  # };
-
-  # HYPRLAND uncategorized configs
-  programs.dconf.enable = true;
-
-  # Thunar File Manager 
-  programs.thunar.enable = true;
-  programs.thunar.plugins = with pkgs.xfce; [
-    thunar-archive-plugin
-    thunar-volman
-  ];
-
-  services.gvfs.enable = true; # Mount, trash, and other functionalities
-  services.tumbler.enable = true; # Thumbnail support for images
-
-  # Enable fonts
-  fonts = {
-    fontconfig = {
-      enable = true;
-      defaultFonts = {
-        monospace = [ "Meslo LG M Regular Nerd Font Complete Mono" ];
-      };
-    };
-    packages = with pkgs;
-      [ (nerdfonts.override { fonts = [ "Meslo" "JetBrainsMono" ]; }) ];
-  };
-
-  xdg.portal.extraPortals =
-    [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk ];
-
-  environment.systemPackages = with pkgs; [
-    gcc
-    gnumake
-    pamixer
-    libsForQt5.qt5.qtquickcontrols2
-    libsForQt5.qt5.qtgraphicaleffects
-    xdg-utils
-  ];
+  environment.homeBinInPath =
+    true; # Add ~/bin to $PATH
 
   system.stateVersion = "23.11";
 }

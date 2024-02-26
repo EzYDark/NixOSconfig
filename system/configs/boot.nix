@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   # Use the systemd-boot EFI boot loader.
   boot = {
     loader = {
@@ -19,7 +18,7 @@
 
     # Remove the temporary files on boot.
     tmp.cleanOnBoot = true;
-    
+
     kernelPackages = pkgs.linuxPackages_latest;
   };
 }

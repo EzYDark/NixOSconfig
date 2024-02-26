@@ -18,7 +18,6 @@
     ./configs/sound_pipewire.nix
     ./configs/zram.nix
     ./configs/power_management.nix
-    ./configs/openssh.nix
     ./configs/nix_config.nix
     ./configs/networking.nix
     ./configs/hyprland

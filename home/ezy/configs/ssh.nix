@@ -10,6 +10,9 @@
           user = "git";
           hostname = "github.com";
           identityFile = "~/.ssh/ezKey";
+          extraOptions = {
+            AddKeysToAgent = "yes";
+          };
         };
       };
     };

@@ -2,7 +2,8 @@
 
 {
   networking = {
-    hostName = "ezy-laptop"; # Hostname of the system
+    hostName =
+      "ezy-laptop"; # Hostname of the system
     networkmanager.enable = true;
     firewall.enable = false;
   };
@@ -20,4 +21,6 @@
       addresses = true;
     };
   };
+
+  programs.ssh.startAgent = true;
 }

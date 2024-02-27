@@ -18,15 +18,7 @@
   hardware.enableAllFirmware = true;
   nixpkgs.config.allowUnfree = true;
   environment = {
-    variables = {
-      NIXPKGS_ALLOW_UNFREE = "1";
-      POLKIT_AUTH_AGENT =
-        "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-      SSH_ASKPASS = lib.mkForce
-        "/home/ezy/askpass-rofi"; # TODO: Make reproducible with Impermanence
-      GIT_ASKPASS = lib.mkForce
-        "/home/ezy/askpass-rofi"; # TODO: Make reproducible with Impermanence
-    };
+    variables = { NIXPKGS_ALLOW_UNFREE = "1"; };
   };
 
   environment.homeBinInPath =

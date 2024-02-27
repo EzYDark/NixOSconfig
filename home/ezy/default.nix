@@ -6,7 +6,8 @@
 
 {
   imports = [
-    ./configs/ssh.nix
+    ./configs/ssh_git.nix
+    ./configs/hyprland.nix
 
     ./configs/alactritty.nix
     ./configs/bat.nix

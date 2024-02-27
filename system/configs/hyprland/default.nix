@@ -2,10 +2,6 @@
   services.xserver = {
     enable = true;
     xkb.layout = "cz";
-    # displayManager = {
-    #   sddm.enable = true;
-    #   sddm.theme = "${import ./sddm_theme.nix { inherit pkgs; }}";
-    # };
     displayManager.gdm = {
       enable = true;
       wayland = true;
@@ -51,6 +47,8 @@
       true; # Keyring for managing secrets
   };
 
+  security.polkit.enable = true;
+
   # Enable fonts
   fonts = {
     fontconfig = {
@@ -68,8 +66,6 @@
         })
       ];
   };
-
-  security.polkit.enable = true;
 
   environment.systemPackages = with pkgs; [
     gcc

@@ -34,12 +34,12 @@
     gpg.enable = true;
   };
 
-  services.ssh-agent.enable = true;
-
   # Little hack to fix permissions and updating of ~/.ssh/config after creating it with home-manager
+  ## Renames .ssh/config to .ssh/config_source
   home.file.".ssh/config" = {
     target = ".ssh/config_source";
   };
+  ## Creates copy of .ssh/config_source to .ssh/config and fixes permissions
   home.activation = {
     sshConfigChmod =
       lib.hm.dag.entryAfter [ "writeBoundary" ] ''

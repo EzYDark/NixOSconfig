@@ -8,10 +8,10 @@
     #     inherit pkgs;
     #   }}";
     # };
-    displayManager.gdm = {
-      enable = true;
-      wayland = true;
-    };
+    # displayManager.gdm = {
+    #   enable = true;
+    #   wayland = true;
+    # };
   };
 
   # Activate system module for Hyprland

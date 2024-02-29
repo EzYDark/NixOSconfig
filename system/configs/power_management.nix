@@ -16,6 +16,7 @@
 
   environment.systemPackages =
     [ pkgs.inotify-tools ];
+
   systemd.services."bat-threshold" = {
     enable = true;
     wantedBy = [ "multi-user.target" ];

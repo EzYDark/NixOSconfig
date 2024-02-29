@@ -28,6 +28,8 @@
     ./configs/containers.nix
     ./configs/xone.nix
     ./configs/fish_shell.nix
+    ./configs/keyd.nix
+    ./configs/lemurs.nix
   ];
 
   # System-wide apps

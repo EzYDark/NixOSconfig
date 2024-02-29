@@ -46,6 +46,7 @@
 
   # User-wide packages
   home.packages = with pkgs; [
+    btop
     grim
     slurp
     aircrack-ng

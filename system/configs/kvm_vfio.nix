@@ -1,4 +1,6 @@
 { pkgs, config, ... }: {
+  # programs.hyprland.enableNvidiaPatches = true;
+
   virtualisation = {
     libvirtd = {
       enable = true;

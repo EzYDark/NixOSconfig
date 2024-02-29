@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   wayland.windowManager.hyprland = {
     enable = true;
+    # enableNvidiaPatches = true;
     systemd.enable = true;
     # plugins = [
     #   inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
@@ -41,13 +42,16 @@
       misc = {
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
+        focus_on_activate = true;
+        new_window_takes_over_fullscreen =
+          1; # 0 = disabled; 1 = focuses new window and fullscreens it; 2 = focuses new window without fullscreening it
         vfr = false;
         vrr = false;
       };
 
       input = {
         kb_layout = "cz";
-        kb_options = "ctrl:swap_lalt_lctl";
+        # kb_options = "ctrl:swap_lalt_lctl";
 
         follow_mouse = 1;
 
@@ -73,7 +77,7 @@
           "rgb(282828) rgb(427b58) 90deg";
         "col.inactive_border" = "rgb(1d2021)";
 
-        layout = "dwindle";
+        layout = "master";
       };
 
       group = {
@@ -119,9 +123,16 @@
 
       gestures = { workspace_swipe = false; };
 
+      # https://github.com/xkbcommon/libxkbcommon/blob/master/include/xkbcommon/xkbcommon-keysyms.h
+      # https://gist.github.com/rickyzhang82/8581a762c9f9fc6ddb8390872552c250
       "$mainMod" = "SUPER";
 
       bind = [
+        "Ctrl Shift Alt, F12, exec, hyprctl dispatch cyclenext prev"
+        "Ctrl Shift Alt, F11, exec, hyprctl dispatch layoutmsg cycleprev"
+
+        "$mainMod, Tab, layoutmsg, cycleprev"
+
         "$mainMod Shift, F, fullscreen, 1"
         "$mainMod Ctrl, F, fakefullscreen"
 

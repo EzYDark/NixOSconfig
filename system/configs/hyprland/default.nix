@@ -2,6 +2,12 @@
   services.xserver = {
     enable = true;
     xkb.layout = "cz";
+    # displayManager.sddm = {
+    #   enable = true;
+    #   theme = "${import ./sddm_theme.nix {
+    #     inherit pkgs;
+    #   }}";
+    # };
     displayManager.gdm = {
       enable = true;
       wayland = true;

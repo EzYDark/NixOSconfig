@@ -7,13 +7,12 @@
 {
   inputs = {
     nixpkgs.url =
-      "github:nixos/nixpkgs/nixos-23.11";
-    nixpkgs-unstable.url =
       "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs_23_11.url =
+      "github:nixos/nixpkgs/nixos-23.11";
 
     home-manager = {
-      url =
-        "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -33,9 +32,9 @@
       "github:Airradda/nixpkgs/master";
   };
 
-  outputs = inputs@{ self, nixpkgs
-    , nixpkgs-unstable, home-manager, disko
-    , distrobox, vesktop, impermanence, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs_23_11
+    , home-manager, disko, distrobox, vesktop
+    , impermanence, ... }:
     let system = "x86_64-linux";
     in {
       nixosConfigurations = {
@@ -43,14 +42,10 @@
           specialArgs = {
             inherit system inputs;
 
-            pkgs-unstable =
-              import nixpkgs-unstable {
-                system = system;
-                config.allowUnfree = true;
-              };
-
-            unstable_keyd =
-              "${nixpkgs-unstable}/nixos/modules/services/hardware/keyd.nix";
+            pkgs_23_11 = import nixpkgs_23_11 {
+              system = system;
+              config.allowUnfree = true;
+            };
           };
 
           modules = [

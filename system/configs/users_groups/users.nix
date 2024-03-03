@@ -4,7 +4,7 @@
       isNormalUser = true;
       password = "1234";
       group = "ezy";
-      shell = pkgs.fish;
+      # shell = pkgs.fish;
       extraGroups = [
         "networkmanager"
         "wheel"
@@ -15,7 +15,7 @@
 
     root = {
       password = "1234";
-      shell = pkgs.fish;
+      # shell = pkgs.fish;
     };
   };
 }

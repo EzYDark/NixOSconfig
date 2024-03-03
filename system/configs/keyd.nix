@@ -1,11 +1,6 @@
 # https://github.com/rvaiya/keyd/blob/master/docs/keyd.scdoc
 
-{ pkgs, unstable_keyd, lib, ... }: {
-  disabledModules =
-    [ "services/hardware/keyd.nix" ];
-
-  imports = [ unstable_keyd ];
-
+{ pkgs, lib, ... }: {
   services.keyd = {
     enable = true;
     keyboards = {

@@ -2,7 +2,7 @@
   imports = [ ./groups.nix ./users.nix ];
 
   users = {
-    defaultUserShell = pkgs.fish;
+    # defaultUserShell = pkgs.fish;
     mutableUsers = false;
   };
 }

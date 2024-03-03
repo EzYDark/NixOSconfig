@@ -139,7 +139,7 @@
         "$mainMod, return, exec, alacritty"
         "$mainMod, C, killactive,"
         "$mainMod, E, exec, thunar"
-        "$mainMod, F, exec, microsoft-edge"
+        "$mainMod, F, exec, vivaldi"
         "$mainMod, R, exec, rofi -show drun -show-icons"
         "$mainMod, J, togglesplit,"
 

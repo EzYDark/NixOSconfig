@@ -1,4 +1,4 @@
-{ pkgs, inputs, pkgs-unstable, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
@@ -22,14 +22,14 @@
     ./configs/networking.nix
     ./configs/hyprland
     ./configs/opengl.nix
-    ./configs/kvm_vfio.nix # !! Choose this or
+    # ./configs/kvm_vfio.nix # !! Choose this or
     # ./configs/gpu_nvidia.nix # !! this one only!
     ./configs/droidcam.nix
     ./configs/containers.nix
     ./configs/xone.nix
     ./configs/fish_shell.nix
     ./configs/keyd.nix
-    ./configs/lemurs.nix
+    # ./configs/lemurs.nix
   ];
 
   # System-wide apps
@@ -40,13 +40,14 @@
     pkgs.steam
     pkgs.fragments
     pkgs.parsec-bin
-    pkgs-unstable.stremio
+    pkgs.stremio
     pkgs.pkgs.appimage-run
     pkgs.wget
     pkgs.caprine-bin
-    pkgs-unstable.spotify
+    pkgs.spotify
     pkgs.nixfmt
     pkgs.microsoft-edge
+    pkgs.vivaldi
 
     pkgs.osu-lazer-bin
 

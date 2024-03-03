@@ -73,7 +73,7 @@
     brightnessctl
     zathura
     htop
-    eww-wayland
+    eww
     lxmenu-data
     shared-mime-info
     cmatrix

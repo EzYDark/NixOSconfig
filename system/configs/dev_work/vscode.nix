@@ -1,5 +1,5 @@
-{ pkgs-unstable, ... }: {
+{ pkgs, ... }: {
   environment.systemPackages =
-    [ pkgs-unstable.vscode-fhs ];
+    [ pkgs.vscode-fhs ];
 
 }

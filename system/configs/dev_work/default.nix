@@ -10,6 +10,7 @@
     pkgs.rust-analyzer
     pkgs.rustup
     pkgs.sccache
+    pkgs.bacon
 
     pkgs.figma-linux
 

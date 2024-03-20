@@ -51,14 +51,14 @@
       cursor = {
         style = {
           shape = "Block";
-          blicking = "Off";
+          blinking = "Off";
         };
         vi_mode_style = "Block";
         unfocused_hollow = true;
         thickness = 0.15;
       };
 
-      mouse.hidden_when_typing = false;
+      mouse.hide_when_typing = false;
 
     };
   };

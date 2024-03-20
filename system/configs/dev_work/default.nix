@@ -6,6 +6,7 @@
   environment.systemPackages = with pkgs; [
     nil
     bun
+    rust-analyzer
     rustup
     figma-linux
     telegram-desktop

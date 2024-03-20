@@ -17,7 +17,10 @@
   hardware.enableAllFirmware = true;
   nixpkgs.config.allowUnfree = true;
   environment = {
-    variables = { NIXPKGS_ALLOW_UNFREE = "1"; };
+    variables = {
+      NIXPKGS_ALLOW_UNFREE = "1";
+      QT_QPA_PLATFORM = "wayland";
+    };
   };
 
   environment.homeBinInPath =

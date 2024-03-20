@@ -23,18 +23,10 @@
 
     impermanence.url =
       "github:nix-community/impermanence";
-
-    # Newer unreleased version of distrobox (1.6.0.1)
-    distrobox.url =
-      "github:pongo1231/nixpkgs/distrobox-1.6.0";
-
-    vesktop.url =
-      "github:Airradda/nixpkgs/master";
   };
 
   outputs = inputs@{ self, nixpkgs, nixpkgs_23_11
-    , home-manager, disko, distrobox, vesktop
-    , impermanence, ... }:
+    , home-manager, disko, impermanence, ... }:
     let system = "x86_64-linux";
     in {
       nixosConfigurations = {

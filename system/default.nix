@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -22,7 +22,7 @@
     ./configs/networking.nix
     ./configs/hyprland
     ./configs/opengl.nix
-    # ./configs/kvm_vfio.nix # !! Choose this or
+    ./configs/kvm_vfio.nix # !! Choose this or
     # ./configs/gpu_nvidia.nix # !! this one only!
     ./configs/droidcam.nix
     ./configs/containers.nix
@@ -48,9 +48,28 @@
     pkgs.nixfmt
     pkgs.microsoft-edge
     pkgs.vivaldi
-
+    pkgs.go
+    pkgs.gopls
+    pkgs.tailwindcss
+    pkgs.obsidian
+    pkgs.protonvpn-gui
+    pkgs.easyeffects
+    pkgs.gnome.gnome-sound-recorder
     pkgs.osu-lazer-bin
+    pkgs.killall
+    pkgs.temurin-bin
 
-    inputs.vesktop.legacyPackages."x86_64-linux".vesktop
+    # Discord
+    (pkgs.discord.override {
+      withOpenASAR = true;
+      withVencord = true;
+    })
+    pkgs.xwaylandvideobridge # for Discord screen sharing (without audio support)
+
+    # Hardware acceleration ??
+    pkgs.libva
+    pkgs.libva-utils
+    pkgs.vaapiVdpau
+    pkgs.libdrm
   ];
 }

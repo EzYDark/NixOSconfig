@@ -1,8 +1,6 @@
-{ inputs, pkgs, ... }: {
-  environment.systemPackages = [
-    inputs.distrobox.legacyPackages."x86_64-linux".distrobox
-    pkgs.virtiofsd
-  ];
+{ pkgs, ... }: {
+  environment.systemPackages =
+    [ pkgs.distrobox pkgs.virtiofsd ];
 
   virtualisation = {
     containers.cdi.dynamic.nvidia.enable = true;

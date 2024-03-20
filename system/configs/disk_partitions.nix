@@ -65,7 +65,8 @@
   };
 
   fileSystems."/persist".neededForBoot = true;
-  # fileSystems."/persist/_snapshots".neededForBoot = true;
+  fileSystems."/persist/_snapshots".neededForBoot =
+    true;
   fileSystems."/persist/home".neededForBoot =
     true;
 }

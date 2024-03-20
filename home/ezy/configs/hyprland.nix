@@ -1,4 +1,19 @@
 { pkgs, ... }: {
+  home.file."hypr_reset" = {
+    enable = true;
+    executable = true;
+    text = ''
+      #!/bin/sh
+      sleep 4
+      killall .xdg-desktop-portal
+      ${pkgs.xdg-desktop-portal-hyprland}/libexec/xdg-desktop-portal-hyprland &
+      sleep 4
+      ${pkgs.xdg-desktop-portal-gtk}/libexec/xdg-desktop-portal-gtk &
+      sleep 4
+      ${pkgs.xdg-desktop-portal}/libexec/xdg-desktop-portal &
+    '';
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
     # enableNvidiaPatches = true;
@@ -11,6 +26,7 @@
       monitor = [
         "HDMI-A-1, 1920x1080@120, 0x0, 1"
         "eDP-1, highres, auto, 1.5"
+        # "eDP-1, disable"
       ];
 
       workspace = [ "HDMI-A-1, 1" "eDP-1, 2" ];
@@ -20,6 +36,13 @@
         "waybar & hyprpaper"
         "mako"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
+        "dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "/home/ezy/hypr_reset"
+      ];
+
+      exec = [
+        "systemctl --user import-environment PATH && systemctl --user restart xdg-desktop-portal.service"
       ];
 
       env = [
@@ -37,6 +60,15 @@
         "GIT_ASKPASS, /home/ezy/askpass-rofi"
         "SSH_AUTH_SOCK, /run/user/1000/ssh-agent"
         "POLKIT_AUTH_AGENT, ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
+
+        "PATH, $HOME/.cargo/bin:$PATH"
+
+        "SHELL, ${pkgs.fish}/bin/fish"
+        "EDITOR, ${pkgs.vscode-fhs}/bin/code"
+        "VISUAL, ${pkgs.vscode-fhs}/bin/code"
+        "BROWSER, ${pkgs.vivaldi}/bin/vivaldi"
+        "TERM, xterm-256color"
+        "TERMINAL, alacritty"
       ];
 
       misc = {
@@ -56,6 +88,7 @@
         follow_mouse = 1;
 
         touchpad = {
+          disable_while_typing = true;
           natural_scroll = true;
           scroll_factor = 0.25;
         };
@@ -77,7 +110,7 @@
           "rgb(282828) rgb(427b58) 90deg";
         "col.inactive_border" = "rgb(1d2021)";
 
-        layout = "master";
+        layout = "dwindle";
       };
 
       group = {
@@ -142,6 +175,7 @@
         "$mainMod, F, exec, vivaldi"
         "$mainMod, R, exec, rofi -show drun -show-icons"
         "$mainMod, J, togglesplit,"
+        "$mainMod, L, togglefloating"
 
         # Brightness Controls
         ", XF86MonBrightnessUp, exec, brightnessctl s 5%+"

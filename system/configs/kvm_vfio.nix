@@ -1,6 +1,4 @@
 { pkgs, config, ... }: {
-  # programs.hyprland.enableNvidiaPatches = true;
-
   virtualisation = {
     libvirtd = {
       enable = true;
@@ -13,7 +11,6 @@
       "vfio_pci"
       "vfio"
       "vfio_iommu_type1"
-      # vfio_virqfd"
 
       "nvidia"
       "nvidia_modeset"

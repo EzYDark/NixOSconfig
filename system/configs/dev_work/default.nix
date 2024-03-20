@@ -3,13 +3,23 @@
 
   programs = { git.enable = true; };
 
-  environment.systemPackages = with pkgs; [
-    nil
-    bun
-    rust-analyzer
-    rustup
-    figma-linux
-    telegram-desktop
-    nodejs_21
+  environment.systemPackages = [
+    pkgs.nil
+    pkgs.nixfmt
+
+    pkgs.rust-analyzer
+    pkgs.rustup
+    pkgs.sccache
+
+    pkgs.figma-linux
+
+    pkgs.go
+    pkgs.gopls
+
+    pkgs.tailwindcss
+    pkgs.bun
+    pkgs.nodejs_21
+
+    pkgs.just
   ];
 }

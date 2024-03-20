@@ -1,8 +1,6 @@
 # https://nixos.wiki/wiki/Nvidia
 
 { config, ... }: {
-  # programs.hyprland.enableNvidiaPatches = true;
-
   boot = {
     initrd.kernelModules = [
       "nvidia"

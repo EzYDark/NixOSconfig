@@ -34,7 +34,7 @@
 
   };
 
-  # Dirty hack to enable "direnv" function using "nix-shell" that does not what for some reason access to "/etc/nix/registry.json" without sudo.
+  # Dirty hack to enable "direnv" usage using "nix-shell" that does not what for some reason access to "/etc/nix/registry.json" without sudo.
   systemd.services."nix-perm" = {
     enable = true;
     wantedBy = [ "multi-user.target" ];

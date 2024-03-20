@@ -29,7 +29,7 @@
     ./configs/xone.nix
     ./configs/fish_shell.nix
     ./configs/keyd.nix
-    # ./configs/lemurs.nix
+    ./configs/discord.nix
   ];
 
   # System-wide apps
@@ -41,35 +41,17 @@
     pkgs.fragments
     pkgs.parsec-bin
     pkgs.stremio
-    pkgs.pkgs.appimage-run
     pkgs.wget
     pkgs.caprine-bin
     pkgs.spotify
-    pkgs.nixfmt
-    pkgs.microsoft-edge
     pkgs.vivaldi
-    pkgs.go
-    pkgs.gopls
-    pkgs.tailwindcss
     pkgs.obsidian
     pkgs.protonvpn-gui
     pkgs.easyeffects
     pkgs.gnome.gnome-sound-recorder
     pkgs.osu-lazer-bin
     pkgs.killall
-    pkgs.temurin-bin
-
-    # Discord
-    (pkgs.discord.override {
-      withOpenASAR = true;
-      withVencord = true;
-    })
-    pkgs.xwaylandvideobridge # for Discord screen sharing (without audio support)
-
-    # Hardware acceleration ??
-    pkgs.libva
-    pkgs.libva-utils
-    pkgs.vaapiVdpau
-    pkgs.libdrm
+    pkgs.temurin-bin # latest JDK
+    pkgs.telegram-desktop
   ];
 }

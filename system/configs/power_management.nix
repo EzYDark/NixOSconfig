@@ -2,8 +2,8 @@
   services.auto-cpufreq.enable = true;
   services.auto-cpufreq.settings = {
     battery = {
-      governor = "performance";
-      turbo = "always";
+      governor = "powersave";
+      turbo = "never";
     };
     charger = {
       governor = "performance";
@@ -13,7 +13,7 @@
 
   powerManagement = {
     enable = true;
-    cpuFreqGovernor = "performance";
+    cpuFreqGovernor = "powersave";
   };
 
   # Automatic battery threshold set (for Huawei Matebook)

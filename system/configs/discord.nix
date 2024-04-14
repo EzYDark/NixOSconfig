@@ -1,8 +1,8 @@
 { pkgs, ... }: {
   environment.systemPackages = [
     (pkgs.discord.override {
-      withOpenASAR = true;
-      withVencord = true;
+      withOpenASAR = false;
+      withVencord = false;
     })
     pkgs.xwaylandvideobridge # for Discord screen sharing (without audio support)
   ];

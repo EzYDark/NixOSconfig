@@ -75,6 +75,7 @@
     gnumake
 
     wl-clipboard
+    cliphist
     polkit_gnome
     pamixer
     qt5.qtwayland

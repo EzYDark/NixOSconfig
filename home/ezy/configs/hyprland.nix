@@ -39,6 +39,7 @@
         "dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "/home/ezy/hypr_reset"
+        "wl-paste --watch cliphist store"
       ];
 
       exec = [
@@ -60,6 +61,7 @@
         "GIT_ASKPASS, /home/ezy/askpass-rofi"
         "SSH_AUTH_SOCK, /run/user/1000/ssh-agent"
         "POLKIT_AUTH_AGENT, ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
+        "RUSTC_WRAPPER, ${pkgs.sccache}/bin/sccache"
 
         "PATH, $HOME/.cargo/bin:$PATH"
 
@@ -177,6 +179,12 @@
         "$mainMod, J, togglesplit,"
         "$mainMod, L, togglefloating"
 
+        # Clipboard manager
+        "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+
+        # Screenshot tool
+        ", Print, exec, /home/ezy/satty-screenshot"
+
         # Brightness Controls
         ", XF86MonBrightnessUp, exec, brightnessctl s 5%+"
         ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
@@ -186,8 +194,6 @@
         ", XF86AudioRaiseVolume, exec, pamixer -i 5"
         ", XF86AudioLowerVolume, exec, pamixer -d 5"
         ", XF86AudioMicMute, exec, pamixer --default-source -t"
-
-        ", PRINT, exec, grim '$HOME/Pictures/screenshots/$(date '+%d%m%y_%H%M').png'"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"

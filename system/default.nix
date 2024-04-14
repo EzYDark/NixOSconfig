@@ -53,5 +53,6 @@
     pkgs.killall
     pkgs.temurin-bin # latest JDK
     pkgs.telegram-desktop
+    pkgs.satty
   ];
 }

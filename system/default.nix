@@ -54,5 +54,8 @@
     pkgs.temurin-bin # latest JDK
     pkgs.telegram-desktop
     pkgs.satty
+    pkgs.fusuma
+    pkgs.ydotool
+    pkgs.playerctl
   ];
 }

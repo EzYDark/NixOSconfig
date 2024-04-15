@@ -58,6 +58,26 @@
         thickness = 0.15;
       };
 
+      keyboard = {
+        bindings = [
+          {
+            key = "C";
+            mods = "Shift";
+            chars = "\\u0003";
+          }
+          {
+            key = "V";
+            mods = "Control";
+            action = "Paste";
+          }
+          {
+            key = "C";
+            mods = "Control";
+            action = "Copy";
+          }
+        ];
+      };
+
       mouse.hide_when_typing = false;
 
     };

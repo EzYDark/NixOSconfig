@@ -9,6 +9,8 @@
         "wheel"
         "libvirtd"
         "keyd"
+        "uinput"
+        "input"
       ];
     };
 

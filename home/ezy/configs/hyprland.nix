@@ -14,6 +14,27 @@
     '';
   };
 
+  home.file.".config/fusuma/config.yml" = {
+    enable = true;
+    text = ''
+      swipe:
+        3:
+          up:
+            command: "sudo -u ezy DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u ezy)/bus playerctl previous" # Previous song
+          down:
+            command: "sudo -u ezy DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u ezy)/bus playerctl next" # Next song
+          left:
+            command: "ydotool click 0xC4" # Mouse Back button
+          right:
+            command: "ydotool click 0xC3" # Mouse Forward button
+        4:
+          up:
+            command: "sudo -u ezy DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u ezy)/bus playerctl play-pause" # Play-Stop song
+          down:
+            command: "sudo -u ezy DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u ezy)/bus playerctl play-pause" # Play-Stop song
+    '';
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
     # enableNvidiaPatches = true;
@@ -39,7 +60,10 @@
         "dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "/home/ezy/hypr_reset"
-        "wl-paste --watch cliphist store"
+        "wl-paste --type text --watch cliphist store"
+        "wl-paste --type image --watch cliphist store"
+        "fusuma -c /home/ezy/.config/fusuma/config.yml"
+        "ydotoold"
       ];
 
       exec = [
@@ -180,7 +204,7 @@
         "$mainMod, L, togglefloating"
 
         # Clipboard manager
-        "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+        "$mainMod, V, exec, cliphist list | rofi -dmenu -window-title 'ClipHist' | cliphist decode | wl-copy"
 
         # Screenshot tool
         ", Print, exec, /home/ezy/satty-screenshot"

@@ -11,6 +11,7 @@
         "keyd"
         "uinput"
         "input"
+        "kvm"
       ];
     };
 

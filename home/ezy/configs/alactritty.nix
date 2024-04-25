@@ -62,7 +62,7 @@
         bindings = [
           {
             key = "C";
-            mods = "Shift";
+            mods = "Control|Shift";
             chars = "\\u0003";
           }
           {

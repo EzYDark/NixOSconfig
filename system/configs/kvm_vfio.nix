@@ -27,6 +27,22 @@
 
       # isolate the GPU (my GTX 1070)
       "vfio-pci.ids=10de:1b81,10de:10f0"
+
+      # Static Hugepages (for eGPU setup)
+      # "default_hugepagesz=1G"
+      # "hugepagesz=1G"
+      # "hugepages=12"
+
+      # Static CPU core isolation (for eGPU setup)
+      # "isolcpus=4-15"
+      # "nohz_full=4-15"
+      # "rcu_nocbs=4-15"
+      # "irqaffinity=0,1,2,3"
+      # "rcu_nocb_poll"
+
+      # Force TSC clocks (for eGPU setup)
+      "clocksource=tsc"
+      "tsc=reliable"
     ];
   };
 

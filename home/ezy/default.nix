@@ -19,7 +19,7 @@
   # User info
   home.username = "ezy";
   home.homeDirectory = "/home/ezy";
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.05";
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -43,8 +43,6 @@
   # home.sessionVariables = { EDITOR = "nano"; };
 
   programs = {
-    lf.enable = true;
-
     direnv = {
       enable = true;
       enableFishIntegration = true;
@@ -72,8 +70,7 @@
     iwgtk
     wirelesstools
     (waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags
-        ++ [ "-Dexperimental=true" ];
+      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     }))
     mako
     libnotify
@@ -81,7 +78,6 @@
     rofi-wayland
     neofetch
     brightnessctl
-    zathura
     htop
     eww
     lxmenu-data

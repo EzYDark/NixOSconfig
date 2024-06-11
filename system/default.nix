@@ -45,7 +45,7 @@
     pkgs.caprine-bin
     pkgs.spotify
     pkgs.vivaldi
-    pkgs.obsidian
+    #pkgs.obsidian
     pkgs.protonvpn-gui
     pkgs.easyeffects
     pkgs.gnome.gnome-sound-recorder
@@ -57,5 +57,12 @@
     pkgs.fusuma
     pkgs.ydotool
     pkgs.playerctl
+    pkgs.upscayl
+    pkgs.firefox-devedition
+    pkgs.geckodriver
+    pkgs.mitmproxy
+    pkgs.microsoft-edge
+    #pkgs.cloudflare-warp
+    pkgs.dua
   ];
 }

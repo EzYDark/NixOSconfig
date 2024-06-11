@@ -6,10 +6,8 @@
 
 {
   inputs = {
-    nixpkgs.url =
-      "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs_23_11.url =
-      "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs_24_05.url = "github:nixos/nixpkgs/nixos-24.05";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -21,12 +19,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    impermanence.url =
-      "github:nix-community/impermanence";
+    impermanence.url = "github:nix-community/impermanence";
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs_23_11
-    , home-manager, disko, impermanence, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs_24_05, home-manager, disko
+    , impermanence, ... }:
     let system = "x86_64-linux";
     in {
       nixosConfigurations = {
@@ -34,9 +31,9 @@
           specialArgs = {
             inherit system inputs;
 
-            pkgs_23_11 = import nixpkgs_23_11 {
+            pkgs_24_05 = import nixpkgs_24_05 {
               system = system;
-              config.allowUnfree = true;
+              config = { allowUnfree = true; };
             };
           };
 
@@ -52,11 +49,8 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
-              home-manager.extraSpecialArgs =
-                inputs;
-              home-manager.users = {
-                ezy = import ./home/ezy;
-              };
+              home-manager.extraSpecialArgs = inputs;
+              home-manager.users = { ezy = import ./home/ezy; };
             }
           ];
         };

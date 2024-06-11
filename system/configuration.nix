@@ -23,8 +23,7 @@
     };
   };
 
-  environment.homeBinInPath =
-    true; # Add ~/bin to $PATH
+  environment.homeBinInPath = true; # Add ~/bin to $PATH
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 }

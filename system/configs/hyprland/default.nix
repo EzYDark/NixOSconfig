@@ -2,13 +2,12 @@
   services.xserver = {
     enable = true;
     xkb.layout = "cz";
-    displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
-      theme = "${import ./sddm_theme.nix {
-        inherit pkgs;
-      }}";
-    };
+  };
+
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    theme = "${import ./sddm_theme.nix { inherit pkgs; }}";
   };
 
   # Activate system module for Hyprland
@@ -22,10 +21,8 @@
     portal = {
       enable = true;
       xdgOpenUsePortal = true;
-      extraPortals = [
-        pkgs.xdg-desktop-portal-hyprland
-        pkgs.xdg-desktop-portal-gtk
-      ];
+      extraPortals =
+        [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk ];
     };
     mime.enable = true;
   };
@@ -35,19 +32,13 @@
   # Thunar File Manager
   programs.thunar = {
     enable = true;
-    plugins = with pkgs.xfce; [
-      thunar-archive-plugin
-      thunar-volman
-    ];
+    plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-volman ];
   };
 
   services = {
-    gvfs.enable =
-      true; # Mount, trash, and other functionalities
-    tumbler.enable =
-      true; # Thumbnail support for images
-    gnome.gnome-keyring.enable =
-      true; # Keyring for managing secrets
+    gvfs.enable = true; # Mount, trash, and other functionalities
+    tumbler.enable = true; # Thumbnail support for images
+    gnome.gnome-keyring.enable = true; # Keyring for managing secrets
   };
 
   security.polkit.enable = true;
@@ -57,17 +48,11 @@
     fontconfig = {
       enable = true;
       defaultFonts = {
-        monospace = [
-          "Meslo LG M Regular Nerd Font Complete Mono"
-        ];
+        monospace = [ "Meslo LG M Regular Nerd Font Complete Mono" ];
       };
     };
     packages = with pkgs;
-      [
-        (nerdfonts.override {
-          fonts = [ "Meslo" "JetBrainsMono" ];
-        })
-      ];
+      [ (nerdfonts.override { fonts = [ "Meslo" "JetBrainsMono" ]; }) ];
   };
 
   environment.systemPackages = with pkgs; [

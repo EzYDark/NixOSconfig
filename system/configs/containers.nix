@@ -1,9 +1,7 @@
 { pkgs, ... }: {
-  environment.systemPackages =
-    [ pkgs.distrobox pkgs.virtiofsd ];
+  environment.systemPackages = [ pkgs.distrobox pkgs.virtiofsd ];
 
   virtualisation = {
-    containers.cdi.dynamic.nvidia.enable = true;
     oci-containers.backend = "podman";
     podman = {
       enable = true;
@@ -13,4 +11,6 @@
       defaultNetwork.settings.dns_enabled = true;
     };
   };
+
+  hardware.nvidia-container-toolkit.enable = true;
 }

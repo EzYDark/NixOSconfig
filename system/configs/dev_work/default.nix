@@ -5,7 +5,7 @@
 
   environment.systemPackages = [
     pkgs.nil
-    pkgs.nixfmt
+    pkgs.nixfmt-rfc-style
 
     # Rust
     pkgs.rustup
@@ -29,7 +29,9 @@
 
     pkgs.tailwindcss
     pkgs.bun
-    pkgs.nodejs_21
+    pkgs.nodejs_22
+    pkgs.typescript
+    pkgs.nodePackages.pnpm
     pkgs.esbuild
 
     pkgs.just

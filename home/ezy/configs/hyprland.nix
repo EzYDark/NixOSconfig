@@ -44,13 +44,9 @@
     #   "/absolute/path/to/plugin.so"
     # ];
     settings = {
-      monitor = [
-        "HDMI-A-1, 1920x1080@120, 0x0, 1"
-        "eDP-1, highres, auto, 1.5"
-        # "eDP-1, disable"
-      ];
+      monitor = [ "eDP-1, highres, 0x0, 1.5" "HDMI-A-1, highrr, auto, 1" ];
 
-      workspace = [ "HDMI-A-1, 1" "eDP-1, 2" ];
+      workspace = [ "eDP-1, 1" "HDMI-A-1, 2" ];
 
       # Execute your favorite apps at launch
       exec-once = [
@@ -92,7 +88,7 @@
         "SHELL, ${pkgs.fish}/bin/fish"
         "EDITOR, ${pkgs.vscode-fhs}/bin/code"
         "VISUAL, ${pkgs.vscode-fhs}/bin/code"
-        "BROWSER, ${pkgs.vivaldi}/bin/vivaldi"
+        "BROWSER, ${pkgs.firefox-devedition}/bin/firefox-devedition"
         "TERM, xterm-256color"
         "TERMINAL, alacritty"
       ];
@@ -132,8 +128,7 @@
         gaps_in = 3;
         gaps_out = 7;
         border_size = 2;
-        "col.active_border" =
-          "rgb(282828) rgb(427b58) 90deg";
+        "col.active_border" = "rgb(282828) rgb(427b58) 90deg";
         "col.inactive_border" = "rgb(1d2021)";
 
         layout = "dwindle";
@@ -141,8 +136,7 @@
 
       group = {
         "col.border_inactive" = "rgba(282a36dd)";
-        "col.border_active" =
-          "rgb(bd93f9) rgb(44475a) 90deg";
+        "col.border_active" = "rgb(bd93f9) rgb(44475a) 90deg";
       };
 
       decoration = {
@@ -198,7 +192,7 @@
         "$mainMod, return, exec, alacritty"
         "$mainMod, C, killactive,"
         "$mainMod, E, exec, thunar"
-        "$mainMod, F, exec, vivaldi"
+        "$mainMod, F, exec, firefox-devedition"
         "$mainMod, R, exec, rofi -show drun -show-icons"
         "$mainMod, J, togglesplit,"
         "$mainMod, L, togglefloating"

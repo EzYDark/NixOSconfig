@@ -2,8 +2,7 @@
 
 {
   networking = {
-    hostName =
-      "ezy-laptop"; # Hostname of the system
+    hostName = "ezy-laptop"; # Hostname of the system
     networkmanager.enable = true;
     firewall.enable = false;
   };
@@ -31,8 +30,8 @@
     };
   };
 
-  # P2P VPN network
-  services.zerotierone = { enable = true; };
+  services.cloudflared.enable = true;
+  networking.nameservers = [ "1.1.1.2" "1.0.0.2" ];
 
   programs.ssh.startAgent = true;
 }

@@ -17,6 +17,7 @@ in {
   config = mkIf cfg.enable {
     home-manager = {
       useUserPackages = true;
+      useGlobalPkgs = true;
       backupFileExtension = "backup";
     };
   };

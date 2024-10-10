@@ -1,8 +1,9 @@
 # Inspirated from:
 - https://github.com/wueestry/nixos-config
 
-
 # How To Setup
+
+- INSTALL AND USE NIXOS IN WSL!
 
 ## Pre-setup for WSL (on Windows)
 1. Find path to USB disk
@@ -21,7 +22,24 @@ sudo wsl --mount \\.\PHYSICALDRIVE0 --bare
     lsblk
 ```
 
-2. Run this command combining Disko installer and Nix installer:
+2. Run this command combining Disko installer and Nix installer (check correct flake config folder path and disk path!):
 ```sh
-    sudo nix --experimental-features "nix-command flakes" run 'github:nix-community/disko#disko-install' -- --flake '/mnt/c/Users/ezy/Desktop/nixos#eznix' --disk main /dev/sdc
+    sudo nix --experimental-features "nix-command flakes" run 'github:nix-community/disko#disko-install' -- --flake '/mnt/c/Users/ezy/Desktop/_NixOS#eznix' --disk main /dev/sdc
+```
+
+## Make blank snapshot before starting
+1. Install Btrfs tools in WSL
+```sh
+nix-shell -p btrfs-progs
+```
+
+2. Mount the USB disk
+```sh
+mkdir /mnt/usb
+mount /dev/sdc2 /mnt/usb
+```
+
+3. Make the blank snapshot
+```sh
+sudo btrfs subvolume snapshot -r /mnt/usb/@root /mnt/usb/@snapshots/.blank-@root
 ```

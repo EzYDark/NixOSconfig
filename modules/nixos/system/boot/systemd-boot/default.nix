@@ -35,9 +35,9 @@ in {
         supportedFilesystems = [ "btrfs" ];
       };
 
-      tmp.cleanOnBoot = true;
+      # tmp.cleanOnBoot = true;
 
-      kernelPackages = pkgs.linuxPackages_latest;
+      # kernelPackages = pkgs.linuxPackages_latest;
     };
   };
 }

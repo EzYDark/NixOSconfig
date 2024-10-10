@@ -1,5 +1,6 @@
 # Inspirated from:
 - https://github.com/wueestry/nixos-config
+- https://github.com/alyraffauf/nixcfg
 
 # How To Setup
 
@@ -30,13 +31,13 @@ sudo wsl --mount \\.\PHYSICALDRIVE0 --bare
 ## Make blank snapshot before starting
 1. Install Btrfs tools in WSL
 ```sh
-nix-shell -p btrfs-progs
+nix-env -iA nixos.btrfs-progs
 ```
 
 2. Mount the USB disk
 ```sh
 mkdir /mnt/usb
-mount /dev/sdc2 /mnt/usb
+sudo mount /dev/sdc2 /mnt/usb
 ```
 
 3. Make the blank snapshot

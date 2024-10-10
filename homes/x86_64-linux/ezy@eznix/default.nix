@@ -8,17 +8,24 @@
 with lib;
 with lib.${namespace}; {
   snowfallorg.user.enable = true;
-  # eznix = { };
+  eznix = { 
+    desktop = {
+      sway = enabled;
+    };
+  };
 
-  # wayland.windowManager.sway = {
-  #   enable = false;
-  #   extraConfig = ''
-  #     input * {
-  #       xkb_layout "cz,us"
-  #     }
-  #   '';
-  # };
-  
+  environment.systemPackages = with pkgs; [
+    firefox
+    vscode-fhs
+    xfce.thunar
+    rofi-wayland
+    kitty
+    autotiling
+    polkit_gnome
+    xdg-desktop-portal-wlr
+    pkgs.greetd.tuigreet
+    bluez
+  ];
 
   
   home.stateVersion = lib.mkDefault (osConfig.system.stateVersion or "24.05");

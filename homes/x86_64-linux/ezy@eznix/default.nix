@@ -10,14 +10,14 @@ with lib.${namespace}; {
   snowfallorg.user.enable = true;
   # eznix = { };
 
-  wayland.windowManager.sway = {
-    enable = true;
-    extraConfig = ''
-      input * {
-        xkb_layout "cz,us"
-      }
-    '';
-  };
+  # wayland.windowManager.sway = {
+  #   enable = false;
+  #   extraConfig = ''
+  #     input * {
+  #       xkb_layout "cz,us"
+  #     }
+  #   '';
+  # };
   
 
   

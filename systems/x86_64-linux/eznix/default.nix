@@ -29,7 +29,7 @@ with lib.${namespace}; {
       ];
     };
 
-    root = { password = "12341234"; };
+    root = { password = "1234"; };
   };
 
   users.groups = {

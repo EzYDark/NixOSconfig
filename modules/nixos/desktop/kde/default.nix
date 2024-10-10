@@ -21,7 +21,7 @@ in {
     services.displayManager.sddm.wayland.enable = true;
 
     services.desktopManager.plasma6.enable = true;
-    # services.displayManager.defaultSession = "plasma";
+    services.displayManager.defaultSession = "plasmawayland";
 
     # Enable QT applications to have a look similar to the GNOME desktop, using a dark theme
     qt = {

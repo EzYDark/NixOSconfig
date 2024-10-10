@@ -4,7 +4,7 @@
 
 # How To Setup
 
-## Pre-setup for WSL on Windows
+## Pre-setup for WSL (on Windows)
 1. Find path to USB disk
 ```sh
 wmic diskdrive list brief
@@ -15,7 +15,7 @@ wmic diskdrive list brief
 sudo wsl --mount \\.\PHYSICALDRIVE0 --bare
 ```
 
-## Installing
+## Installing (in WSL)
 1. Check and find a disk to install on:
 ```sh
     lsblk

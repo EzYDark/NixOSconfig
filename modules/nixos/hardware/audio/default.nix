@@ -24,18 +24,27 @@ in {
       jack.enable = true;
     };
 
+    hardware.bluetooth.enable = true;
+    hardware.bluetooth.powerOnBoot = true;
+    services.blueman.enable = true;
+
+    services.pipewire.wireplumber = {
+      configPackages = [
+        (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/11-bluetooth-policy.conf" ''
+          wireplumber.settings = { bluetooth.autoswitch-to-headset-profile = false }
+        '')
+      ];
+    };
+
     services.pipewire.wireplumber.extraConfig.bluetoothEnhancements = {
       "monitor.bluez.properties" = {
           "bluez5.enable-sbc-xq" = true;
           "bluez5.enable-msbc" = true;
           "bluez5.enable-hw-volume" = true;
-          "bluez5.roles" = [ "hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag" ];
+          "bluez5.hfphsp-backend" = "none";
+          "bluez5.roles" = [ "a2dp_sink" "a2dp_source" ];
       };
     };
-
-    hardware.bluetooth.enable = true;
-    hardware.bluetooth.powerOnBoot = true;
-    services.blueman.enable = true;
 
     systemd.user.services.mpris-proxy = {
       description = "Mpris proxy";
@@ -47,6 +56,7 @@ in {
     hardware.bluetooth.settings = {
       General = {
         Enable = "Source,Sink,Media,Socket";
+        Disable = "Headset"; # To disable Handsfree mode???
         Experimental = true;
       };
     };

@@ -15,13 +15,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-
-    security.pam.services.greetd = {
-      enableGnomeKeyring = true;
-      gnupg.enable = true;
-      kwallet.enable = true;
-    };
-
+    
     services.greetd = {
       enable = true;
       settings = {

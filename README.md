@@ -44,3 +44,11 @@ sudo mount /dev/sdc2 /mnt/usb
 ```sh
 sudo btrfs subvolume snapshot -r /mnt/usb/@root /mnt/usb/@snapshots/.blank-@root
 ```
+
+
+
+
+---
+
+# TODO:
+- Only able to set one default shell and other tools using session variables.

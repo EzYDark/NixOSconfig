@@ -18,7 +18,6 @@ in {
     
     eznix = {
       desktop = {
-        swaylock = disabled;
         greetd = enabled;
       };
     };
@@ -27,7 +26,6 @@ in {
       grim # screenshot functionality
       slurp # screenshot functionality
       wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
-      mako # notification system developed by swaywm maintainer
       pulseaudio
     ];
 

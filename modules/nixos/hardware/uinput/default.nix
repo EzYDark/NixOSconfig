@@ -8,9 +8,9 @@
 }:
 with lib;
 with lib.${namespace}; let
-  cfg = config.${namespace}.system.uinput;
+  cfg = config.${namespace}.hardware.uinput;
 in {
-  options.${namespace}.system.uinput = with types; {
+  options.${namespace}.hardware.uinput = with types; {
     enable = mkBoolOpt false "Whether or not to enable UInput.";
   };
 

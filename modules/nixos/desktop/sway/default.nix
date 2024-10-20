@@ -26,7 +26,6 @@ in {
       grim # screenshot functionality
       slurp # screenshot functionality
       wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
-      pulseaudio
     ];
 
     programs.light.enable = true;
@@ -37,7 +36,7 @@ in {
 
     # enable Sway window manager
     programs.sway = {
-      enable = true;
+      enable = false;
       wrapperFeatures.gtk = true;
     };
 

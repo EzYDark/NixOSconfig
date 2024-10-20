@@ -21,6 +21,7 @@ with lib.${namespace}; {
       sway = enabled;
     };
     hardware = {
+      kvm = enabled;
       firmware = enabled;
       audio = enabled;
       uinput = enabled;

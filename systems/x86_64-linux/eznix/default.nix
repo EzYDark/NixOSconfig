@@ -29,6 +29,7 @@ with lib.${namespace}; {
     programs = {
       defaultShell.fish = enabled;
       keyd = enabled;
+      steam = enabled;
     };
     system = {
       lid-suspend = enabled;

@@ -21,7 +21,8 @@ with lib.${namespace}; {
       sway = enabled;
     };
     hardware = {
-      kvm = enabled;
+      # kvm = enabled;
+      nvidia-gpu = enabled;
       firmware = enabled;
       audio = enabled;
       uinput = enabled;

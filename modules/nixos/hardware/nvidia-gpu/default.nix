@@ -35,13 +35,20 @@ in {
 
     hardware.nvidia = {
       modesetting.enable = true;
+      # prime = {
+      #   sync.enable = true;
+      #   nvidiaBusId = "PCI:3:0:0";
+      #   amdgpuBusId = "PCI:4:0:0";
+      # };
+      # forceFullCompositionPipeline = true;
       open = false;
       nvidiaSettings = true;
       nvidiaPersistenced = true;
       package =
+        config.boot.kernelPackages.nvidiaPackages.latest;
         # config.boot.kernelPackages.nvidiaPackages.stable;
         # config.boot.kernelPackages.nvidiaPackages.production;
-        config.boot.kernelPackages.nvidiaPackages.beta;
+        # config.boot.kernelPackages.nvidiaPackages.beta;
     };
 
   };

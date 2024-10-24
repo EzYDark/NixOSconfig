@@ -31,6 +31,7 @@ with lib.${namespace}; {
       defaultShell.fish = enabled;
       keyd = enabled;
       steam = enabled;
+      gamemode = enabled;
     };
     system = {
       power-management = enabled;

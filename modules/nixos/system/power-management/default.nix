@@ -10,7 +10,7 @@ with lib;
 with lib.${namespace}; let
   cfg = config.${namespace}.system.power-management;
 in {
-  options.${namespace}.system.management = with types; {
+  options.${namespace}.system.power-management = with types; {
     enable = mkBoolOpt false "Whether or not to enable Power Management.";
   };
 

@@ -18,7 +18,7 @@ with lib.${namespace}; {
     config.nix = enabled;
     desktop = {
       greetd = enabled;
-      sway = enabled;
+      hyprland = enabled;
     };
     hardware = {
       # kvm = enabled;

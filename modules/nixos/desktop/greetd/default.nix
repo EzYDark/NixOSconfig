@@ -20,7 +20,7 @@ in {
       enable = true;
       settings = {
         default_session = {
-          command = "${lib.getExe pkgs.greetd.tuigreet} --asterisks --user-menu -g 'Welcome to NixOS ${config.system.nixos.release}' --time --remember --cmd 'sway'";
+          command = "${lib.getExe pkgs.greetd.tuigreet} --asterisks --user-menu -g 'Welcome to NixOS ${config.system.nixos.release}' --time --remember --cmd 'Hyprland'";
           user = "greeter";
         };
       };

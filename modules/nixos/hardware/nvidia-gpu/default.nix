@@ -43,7 +43,7 @@ in {
       # forceFullCompositionPipeline = true;
       open = false;
       nvidiaSettings = true;
-      nvidiaPersistenced = true;
+      # nvidiaPersistenced = true;
       package =
         config.boot.kernelPackages.nvidiaPackages.latest;
         # config.boot.kernelPackages.nvidiaPackages.stable;

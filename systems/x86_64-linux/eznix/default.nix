@@ -33,6 +33,7 @@ with lib.${namespace}; {
       steam = enabled;
     };
     system = {
+      power-management = enabled;
       lid-suspend = enabled;
       boot.systemd-boot = enabled;
       disko.btrfs = enabled;

@@ -19,25 +19,11 @@ in {
     programs.steam = {
       enable = true;
       extest.enable = true;
-      protontricks = {
-        enable = true;
-      };
-      gamescopeSession = {
-        enable = true; 
-      };
-
       extraCompatPackages = with pkgs; [
         proton-ge-bin
       ];
-      extraPackages = with pkgs; [
-        gamescope
-      ];
       localNetworkGameTransfers.openFirewall = true;
       dedicatedServer.openFirewall = true;
-    };
-
-    programs.gamescope = {
-      enable = true;
     };
 
   };

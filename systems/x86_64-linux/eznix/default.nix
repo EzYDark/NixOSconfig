@@ -26,6 +26,7 @@ with lib.${namespace}; {
       firmware = enabled;
       audio = enabled;
       uinput = enabled;
+      xone = enabled;
     };
     programs = {
       defaultShell.fish = enabled;

@@ -21,6 +21,7 @@ with lib.${namespace}; {
         "input"
         "kvm"
         "video"
+        "gamemode"
       ];
     };
 
@@ -30,5 +31,6 @@ with lib.${namespace}; {
   users.groups = {
     ezy = { members = [ "ezy" ]; };
     keyd = { members = [ "ezy" ]; };
+    gamemode = { members = [ "ezy" ]; };
   };
 }

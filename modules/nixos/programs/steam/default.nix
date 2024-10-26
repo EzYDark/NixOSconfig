@@ -22,6 +22,7 @@ in {
       extraCompatPackages = with pkgs; [
         proton-ge-bin
       ];
+      gamescopeSession.enable = true;
       localNetworkGameTransfers.openFirewall = true;
       dedicatedServer.openFirewall = true;
     };

@@ -33,6 +33,7 @@ with lib.${namespace}; {
       keyd = enabled;
       steam = enabled;
       gamemode = enabled;
+      gamescope = enabled;
     };
     system = {
       power-management = enabled;

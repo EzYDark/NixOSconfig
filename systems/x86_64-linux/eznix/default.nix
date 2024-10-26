@@ -47,6 +47,9 @@ with lib.${namespace}; {
     };
   };
 
+  environment.systemPackages = with pkgs; [
+    winetricks
+  ];
 
 
   system.stateVersion = "24.05";

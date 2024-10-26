@@ -22,9 +22,12 @@ in {
       extraCompatPackages = with pkgs; [
         proton-ge-bin
       ];
+      protontricks.enable = true;
       gamescopeSession.enable = true;
       localNetworkGameTransfers.openFirewall = true;
       dedicatedServer.openFirewall = true;
+      remotePlay.openFirewall = true;
+
     };
 
   };
